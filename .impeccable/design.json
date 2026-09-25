@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-25T07:52:49.933340+00:00",
+  "title": "Design System: Yaponiya iqtisodiyoti",
+  "extensions": {
+    "colorMeta": {
+      "paper-water": {
+        "role": "neutral",
+        "displayName": "Paper Water",
+        "canonical": "oklch(97.6% 0.003 264.5)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#a4a5a7",
+          "#c8c9cb",
+          "#edeef0"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "canonical": "oklch(95.1% 0.006 255.5)",
+        "tonalRamp": [
+          "#090b0e",
+          "#232528",
+          "#404245",
+          "#5f6165",
+          "#808286",
+          "#a2a5a9",
+          "#c6c9cd",
+          "#eceff3"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(91.1% 0.010 252.8)",
+        "tonalRamp": [
+          "#080b0f",
+          "#22252a",
+          "#3e4247",
+          "#5d6267",
+          "#7e8388",
+          "#a1a5ab",
+          "#c5cacf",
+          "#eaeff5"
+        ]
+      },
+      "feathered-gray": {
+        "role": "neutral",
+        "displayName": "Feathered Gray",
+        "canonical": "oklch(77.4% 0.019 258.4)",
+        "tonalRamp": [
+          "#070b13",
+          "#1f252f",
+          "#3c424c",
+          "#5b626c",
+          "#7b838e",
+          "#9ea6b1",
+          "#c2cad6",
+          "#e7effc"
+        ]
+      },
+      "dilute-ink": {
+        "role": "neutral",
+        "displayName": "Dilute Ink",
+        "canonical": "oklch(53.1% 0.034 257.8)",
+        "tonalRamp": [
+          "#030b19",
+          "#1b2636",
+          "#374354",
+          "#556275",
+          "#768397",
+          "#98a6bb",
+          "#bccae0",
+          "#e1f0ff"
+        ]
+      },
+      "ink-current": {
+        "role": "primary",
+        "displayName": "Ink Current",
+        "canonical": "oklch(29.9% 0.057 262.7)",
+        "tonalRamp": [
+          "#010923",
+          "#162440",
+          "#324260",
+          "#506182",
+          "#7083a5",
+          "#92a6c9",
+          "#b6caef",
+          "#daefff"
+        ]
+      },
+      "indigo-depth": {
+        "role": "primary",
+        "displayName": "Indigo Depth",
+        "canonical": "oklch(21.9% 0.054 259.0)",
+        "tonalRamp": [
+          "#010a21",
+          "#14253f",
+          "#30425f",
+          "#4f6280",
+          "#6f83a3",
+          "#91a6c7",
+          "#b5cbed",
+          "#d9f0ff"
+        ]
+      },
+      "sumi-pool": {
+        "role": "neutral",
+        "displayName": "Sumi Pool",
+        "canonical": "oklch(14.4% 0.019 261.2)",
+        "tonalRamp": [
+          "#070b13",
+          "#20252f",
+          "#3c424c",
+          "#5b626c",
+          "#7c838e",
+          "#9ea5b1",
+          "#c2cad6",
+          "#e7effc"
+        ]
+      },
+      "shu-seal": {
+        "role": "tertiary",
+        "displayName": "Shu Seal",
+        "canonical": "oklch(54.8% 0.176 32.7)",
+        "tonalRamp": [
+          "#2d0000",
+          "#510000",
+          "#742111",
+          "#994332",
+          "#bf6552",
+          "#e68874",
+          "#ffac97",
+          "#ffd1bb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero title and chapter openers."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, per-word ink-settling reveal."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Item headings in ledgers, sectors, future list."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy; ledes cap at 62ch."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One-paragraph section summary in dilute ink."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Rail items and control labels; never above a heading."
+      },
+      "inscription": {
+        "displayName": "Inscription",
+        "purpose": "Japanese words hung vertically beside headings."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay",
+        "value": "0 18px 40px -18px rgba(10,26,51,0.35)",
+        "purpose": "Help overlay only."
+      },
+      {
+        "name": "tooltip",
+        "value": "0 10px 24px -12px rgba(10,26,51,0.6)",
+        "purpose": "Chart tooltips only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-ink",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every reveal, drift and transition."
+      },
+      {
+        "name": "settle",
+        "value": "opacity .12→1, blur 7px→0, translateY .35em→0 over 1.1s, 40ms word stagger",
+        "purpose": "Ink settling into focus on reveal."
+      },
+      {
+        "name": "marble-drift",
+        "value": "background-position 0%→100% over 1.6s",
+        "purpose": "Primary control hover."
+      },
+      {
+        "name": "aurora",
+        "value": "background-position 0%→160% over 60s linear",
+        "purpose": "Future marbled wash drift."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg (rail appears)",
+        "value": "1024px"
+      },
+      {
+        "name": "xl (readouts)",
+        "value": "1280px"
+      },
+      {
+        "name": "root 20px",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Marbled indigo pill that starts the talk.",
+      "html": "<button class=\"ds-btn-primary\"><span>TAQDIMOTNI BOSHLASH</span><span class=\"ds-btn-disc\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"><path d=\"M12 5v14M19 12l-7 7-7-7\"/></svg></span></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 12px 0 28px;border:0;border-radius:999px;background:var(--color-depth,#0a1a33) linear-gradient(115deg,#0a1a33 0%,#1e2d4a 22%,#0a1a33 38%,#2b3d5e 55%,#0a1a33 70%,#12213d 100%);background-size:180% auto;background-position:0% 50%;color:#f6f7f9;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.16em;cursor:pointer;transition:background-position 1.6s cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{background-position:100% 50%}.ds-btn-primary:focus-visible{outline:2px solid #1e2d4a;outline-offset:3px}.ds-btn-primary:active{transform:scale(.98)}.ds-btn-disc{display:grid;place-items:center;width:36px;height:36px;border-radius:999px;border:1px solid rgba(246,247,249,.25)}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hairline pill for the sources jump.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">MANBALAR</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;height:56px;padding:0 28px;border:1px solid #aeb6c2;border-radius:999px;color:#0a1a33;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.16em;text-decoration:none;transition:border-color .3s}.ds-btn-secondary:hover{border-color:#0a1a33}.ds-btn-secondary:focus-visible{outline:2px solid #1e2d4a;outline-offset:3px}"
+    },
+    {
+      "name": "Rail Item",
+      "kind": "nav",
+      "refersTo": "rail-item-active",
+      "description": "Section link in the left rail; active item sits in an indigo disc.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail-item is-active\" href=\"#\"><span class=\"ds-rail-dot\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M12 2.7 5 12a7 7 0 1 0 14 0z\"/></svg></span>RAQAMLARDA</a><a class=\"ds-rail-item\" href=\"#\"><span class=\"ds-rail-dot\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></span>TARIX</a></nav>",
+      "css": ".ds-rail{display:flex;flex-direction:column;gap:2px;width:190px}.ds-rail-item{display:flex;align-items:center;gap:14px;padding:6px 12px 6px 6px;border-radius:999px;color:#606d80;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.14em;text-decoration:none;transition:color .3s}.ds-rail-item:hover{color:#0a1a33}.ds-rail-item:focus-visible{outline:2px solid #1e2d4a;outline-offset:2px}.ds-rail-dot{display:grid;place-items:center;width:32px;height:32px;border-radius:999px;color:#606d80;transition:background .5s,color .5s}.ds-rail-item.is-active{color:#0a1a33}.ds-rail-item.is-active .ds-rail-dot{background:#0a1a33;color:#f6f7f9}"
+    },
+    {
+      "name": "Kanji Flashcard",
+      "kind": "card",
+      "refersTo": "flashcard",
+      "description": "Term card that flips to its meaning.",
+      "html": "<button class=\"ds-card\"><span class=\"ds-card-inner\"><span class=\"ds-card-front\"><span class=\"ds-label\">KAIZEN</span><span class=\"ds-kanji\">改善</span><span>Doimiy takomillashtirish</span></span><span class=\"ds-card-back\"><span class=\"ds-kanji-sm\">改善</span><span>Har bir ishchi har kuni kichik yaxshilanish taklif qiladi.</span></span></span></button>",
+      "css": ".ds-card{width:220px;height:300px;padding:0;border:0;background:none;perspective:2000px;cursor:pointer;font:350 16px/1.5 Commissioner,sans-serif}.ds-card-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.77,0,.175,1)}.ds-card:hover .ds-card-inner,.ds-card:focus-visible .ds-card-inner{transform:rotateY(180deg)}.ds-card-front,.ds-card-back{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:24px;border-radius:16px;backface-visibility:hidden;text-align:left}.ds-card-front{background:#f6f7f9;border:1px solid #dde2e8;color:#1e2d4a}.ds-card-back{background:#0a1a33;color:#dde2e8;transform:rotateY(180deg);justify-content:flex-start;gap:12px}.ds-label{font-size:12px;letter-spacing:.18em;color:#606d80}.ds-kanji{align-self:center;writing-mode:vertical-rl;font:500 64px/1 'Shippori Mincho B1',serif;color:#0a1a33}.ds-kanji-sm{font:500 28px/1 'Shippori Mincho B1',serif;color:#aeb6c2}"
+    },
+    {
+      "name": "Ledger Row",
+      "kind": "custom",
+      "description": "Figure + label on a hairline rule, with its source.",
+      "html": "<div class=\"ds-ledger\"><span class=\"ds-fig\">~230%</span><span><span class=\"ds-lbl\">Davlat qarzi / YaIM — rivojlangan davlatlar ichida eng yuqori</span><span class=\"ds-src\">XVF WEO, 2025-oktabr</span></span></div>",
+      "css": ".ds-ledger{display:grid;grid-template-columns:10.5rem 1fr;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid #dde2e8;max-width:620px}.ds-fig{font:300 48px/1 Commissioner,sans-serif;letter-spacing:-.02em;color:#0a1a33}.ds-lbl{display:block;font:350 17px/1.4 Commissioner,sans-serif;color:#0a1a33}.ds-src{display:block;margin-top:6px;font:350 13px/1.4 Commissioner,sans-serif;color:#606d80}"
+    },
+    {
+      "name": "Vertical Inscription Heading",
+      "kind": "custom",
+      "description": "Heading with its Japanese word hung vertically beside it.",
+      "html": "<div class=\"ds-insc\"><span class=\"ds-insc-jp\">未来</span><h2 class=\"ds-h2\">Yangi o‘sish manbalari</h2></div>",
+      "css": ".ds-insc{display:flex;align-items:flex-start;gap:24px}.ds-insc-jp{writing-mode:vertical-rl;padding-top:8px;font:500 22px/1 'Shippori Mincho B1',serif;letter-spacing:.3em;color:#606d80}.ds-h2{margin:0;font:250 64px/1.02 Commissioner,sans-serif;letter-spacing:-.025em;color:#0a1a33}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Suminagashi Basin",
+    "overview": "The page is one shallow basin of water on which ink is dropped. Each era of Japan's economy is a drop that spreads, thins and is pushed outward by the next, so the newest drop is always the darkest region. The same area-preserving marbling map drives the live WebGL hero, the hairline history rings, and the computed marbled textures on controls, the endpaper band and the future wash — the ink is never a picture of ink.\n\nIt is a projected talk, not a scrolling brochure: every presenter stop is a full-viewport slide holding one idea, reached with → / PageDown. Paper-white water carries reading; two indigo \"pools\" (the robot section and the finale) mark the climax and the close. A single vermilion seal is the only warm color on the page.",
+    "keyCharacteristics": [
+      "Cool paper-white ground, indigo and carbon ink that thins to feathered gray — no cream.",
+      "Light-weight humanist sans at large sizes, with Japanese words hung as vertical mincho inscriptions beside headings.",
+      "Structure from hairline rules and 1px gaps, never from drop shadows or boxed cards.",
+      "Motion is ink: spreading (radial bloom), thinning (opacity + blur resolving to focus), dissolving (masked erase with blur).",
+      "Every figure carries its source and year; approximations wear \"~\"."
+    ],
+    "rules": [
+      {
+        "name": "The Newest Drop Is Darkest Rule",
+        "body": "Wherever time is shown, the present is the darkest mark and the past thins toward feathered gray — the year's last two digits, the ring bands, the ladder rows, the aging line.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Seal Rule",
+        "body": "Vermilion marks only the mark and \"now\". It is never a button, a link color or a series color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inscription, Not Kicker, Rule",
+        "body": "A Japanese word belongs beside its heading in vertical writing (writing-mode: vertical-rl, 0.3em tracking), never as a small line above it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Density Is Depth Rule",
+        "body": "To bring something forward, give it darker ink or put it on a pool; never add a card shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do give every figure a source and a year, and prefix rounded values with \"~\".",
+      "Do make each presenter stop one full-viewport slide with one idea.",
+      "Do compute ink (marbling map, fluid solver) instead of drawing pictures of ink.",
+      "Do hang Japanese words vertically beside headings.",
+      "Do keep chart text ≥14px at projector size and give every chart a \"Jadval ko‘rinishi\" table view."
+    ],
+    "donts": [
+      "Don't put a kicker or eyebrow label above a heading.",
+      "Don't use vermilion for anything but the seal and \"now\".",
+      "Don't use drop shadows on cards or sections; depth is ink density.",
+      "Don't use gradient text, glass or blur as decoration.",
+      "Don't show on-screen interaction instructions to the audience — they live in the \"?\" overlay."
+    ]
+  }
+}

@@ -1,0 +1,534 @@
+@import "tailwindcss";
+
+/* ── Suminagashi tokens ─────────────────────────────────────────────
+   Paper-white water, indigo and carbon ink, dye thinning to gray.
+   One vermilion seal (shu) is rationed to the mark and the "now" marker. */
+@theme {
+  --color-paper: #f6f7f9;
+  --color-wash: #eceff3;
+  --color-mist: #dde2e8;
+  --color-feather: #aeb6c2;
+  --color-dilute: #606d80;
+  --color-ink: #1e2d4a;
+  --color-depth: #0a1a33;
+  --color-sumi: #060a12;
+  --color-seal: #c23b22;
+
+  /* shadcn roles */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-depth);
+  --color-card: var(--color-paper);
+  --color-card-foreground: var(--color-depth);
+  --color-border: var(--color-mist);
+  --color-muted-foreground: var(--color-dilute);
+  --color-primary: var(--color-ink);
+  --color-primary-foreground: var(--color-paper);
+
+  --font-sans: "Commissioner", ui-sans-serif, system-ui, sans-serif;
+  --font-jp: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+
+  --ease-ink: cubic-bezier(0.16, 1, 0.3, 1);
+  --rail: 0px;
+
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: 160% 50%;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --rail: 232px;
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-depth);
+    font-family: var(--font-sans);
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scrollbar-color: var(--color-feather) var(--color-paper);
+    scrollbar-width: thin;
+  }
+  @media (min-width: 1600px) {
+    html {
+      font-size: 20px;
+    }
+  }
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    line-height: 1.55;
+    font-weight: 350;
+    caret-color: var(--color-ink);
+  }
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-feather);
+    border-radius: 10px;
+    border: 3px solid var(--color-paper);
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@layer components {
+  .label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .jp {
+    font-family: var(--font-jp);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .num {
+    font-feature-settings: "lnum" 1;
+    letter-spacing: -0.02em;
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  .section-title {
+    font-size: clamp(2.6rem, 5.2vw, 5.4rem);
+    font-weight: 250;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+  .lede {
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    line-height: 1.6;
+    max-width: 62ch;
+    color: var(--color-dilute);
+  }
+  .note {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: var(--color-dilute);
+  }
+  .hair {
+    border-color: var(--color-mist);
+  }
+  /* One idea per screen: every presenter stop fills the viewport and centres its content. */
+  .slide {
+    min-height: 100svh;
+    align-content: center;
+  }
+  .wrap-page {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 4.5rem);
+  }
+}
+
+/* ── Pinned stages (scroll-web mechanics) ───────────────────────── */
+.stage {
+  position: relative;
+  --p: 0;
+}
+.stage__pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* Masked whiteout: erased bottom-up and dissolved like ink in water */
+.whiteout {
+  --e: calc((1 - var(--p) * 1.25) * 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 var(--e), transparent calc(var(--e) + 14%));
+  mask-image: linear-gradient(180deg, #000 var(--e), transparent calc(var(--e) + 14%));
+  filter: blur(calc(var(--p) * 7px));
+}
+.whiteout-caption {
+  opacity: calc(1 - var(--p) * 1.7);
+}
+
+/* ── Ink-settling reveals ───────────────────────────────────────────
+   Words and atoms start faint and blurred (ink not yet settled) and
+   resolve into focus. Content is never fully invisible. */
+.motion .w {
+  display: inline-block;
+  opacity: 0.12;
+  filter: blur(7px);
+  transform: translateY(0.35em);
+  transition:
+    opacity 1.1s var(--ease-ink),
+    filter 1.1s var(--ease-ink),
+    transform 1.1s var(--ease-ink);
+  transition-delay: calc(var(--i, 0) * 40ms);
+}
+.motion .is-in .w,
+.motion .w.is-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+.motion [data-rev] {
+  opacity: 0.12;
+  filter: blur(8px);
+  transform: translateY(16px);
+  transition:
+    opacity 1.1s var(--ease-ink),
+    filter 1.1s var(--ease-ink),
+    transform 1.1s var(--ease-ink);
+  transition-delay: var(--d, 0ms);
+}
+.motion [data-rev].is-in {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+
+/* ── Chart marks settle like ink ───────────────────────────────── */
+.motion .drop,
+.motion .ripple,
+.motion .bar {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.motion .drop {
+  transform: scale(0.12);
+  transition: transform 1.8s var(--ease-ink);
+}
+.motion .is-in .drop {
+  transform: scale(1);
+}
+.ripple {
+  opacity: 0;
+}
+.motion .is-in .ripple {
+  animation: ripple 2s var(--ease-ink) both;
+}
+@keyframes ripple {
+  from {
+    transform: scale(0.5);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+.motion .bar {
+  transform-origin: bottom;
+  transform: scaleY(0.02);
+  transition:
+    transform 1.5s var(--ease-ink),
+    fill 0.3s;
+}
+.motion .is-in .bar {
+  transform: none;
+}
+.motion .draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s var(--ease-ink) 0.2s;
+}
+.motion .is-in .draw {
+  stroke-dashoffset: 0;
+}
+.motion .hbar {
+  transform-origin: left;
+  transform: scaleX(0.02);
+  transition: transform 1.4s var(--ease-ink);
+}
+.motion .is-in .hbar {
+  transform: none;
+}
+
+/* ── Marquee of makers ─────────────────────────────────────────── */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+/* ── Spline fallback loader: a drop spreading into rings ───────── */
+.loader {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-feather);
+  animation: loader-ring 1.6s var(--ease-ink) infinite;
+}
+@keyframes loader-ring {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ── Seal ring rotation ────────────────────────────────────────── */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Splash button (button.md keyframes, ink colours) ──────────── */
+@keyframes charAppear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  20% {
+    transform: translateY(70%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15%);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes charDisappear {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-70%);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-128px);
+    opacity: 1;
+  }
+}
+@keyframes path {
+  from {
+    stroke: var(--color-feather);
+  }
+  to {
+    stroke-dashoffset: -480;
+    stroke: var(--color-ink);
+  }
+}
+@keyframes splash {
+  to {
+    stroke-dasharray: 2 60;
+    stroke-dashoffset: -60;
+  }
+}
+
+.splash-btn {
+  --h: 58px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--h);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--color-paper);
+  font: inherit;
+}
+.splash-btn .bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--color-depth);
+  transition: transform 0.5s var(--ease-ink);
+}
+.splash-btn:hover .bg {
+  transform: scale(1.04);
+}
+.splash-btn:active .bg {
+  transform: scale(0.97);
+}
+.splash-btn .splash {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 342px;
+  height: 208px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  stroke: var(--color-ink);
+  stroke-dasharray: 60 60;
+  stroke-dashoffset: 60;
+}
+.splash-btn:hover .splash path {
+  animation: splash 0.8s cubic-bezier(0.3, 0, 0, 1) forwards 0.05s;
+}
+.splash-btn .wrap {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-inline: 1.9rem 1.5rem;
+}
+.splash-btn .path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: transparent;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  pointer-events: none;
+}
+.splash-btn:hover .path {
+  animation: path 1.4s var(--ease-ink) forwards;
+}
+.splash-btn .content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.splash-btn .char {
+  display: flex;
+}
+.splash-btn .char span {
+  display: inline-block;
+  white-space: pre;
+}
+.splash-btn .char.state-2 {
+  position: absolute;
+  left: 0;
+}
+.splash-btn .char.state-2 span {
+  opacity: 0;
+}
+.splash-btn:hover .char.state-1 span {
+  animation: charDisappear 0.5s cubic-bezier(0.3, 0, 0, 1) forwards calc(var(--i) * 0.03s);
+}
+.splash-btn:hover .char.state-2 span {
+  animation: charAppear 1.2s cubic-bezier(0.3, 0, 0, 1) forwards calc(var(--i) * 0.03s + 0.1s);
+}
+.splash-btn .icon {
+  display: grid;
+  place-items: center;
+}
+.splash-btn:hover .icon svg {
+  animation: arrow 1s var(--ease-ink) forwards;
+}
+
+.splash-btn--light {
+  color: var(--color-depth);
+}
+.splash-btn--light .bg {
+  background: var(--color-paper);
+}
+.splash-btn--light .splash {
+  stroke: var(--color-mist);
+}
+
+/* ── Reduced motion: every pinned stage becomes a normal band ─── */
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    height: auto !important;
+  }
+  .stage__pin {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+  }
+  .marquee__track {
+    animation: none;
+  }
+  .whiteout {
+    -webkit-mask-image: none;
+    mask-image: none;
+    filter: none;
+  }
+  .whiteout-caption {
+    opacity: 1;
+  }
+  .motion .w,
+  .motion [data-rev] {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
