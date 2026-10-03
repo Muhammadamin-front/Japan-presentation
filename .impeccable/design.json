@@ -1,229 +1,367 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-25T07:52:49.933340+00:00",
-  "title": "Design System: Yaponiya iqtisodiyoti",
+  "generatedAt": "2026-10-03T12:46:00+00:00",
+  "title": "Design System: Vatikan iqtisodiyoti",
   "extensions": {
     "colorMeta": {
-      "paper-water": {
+      "gravel": {
         "role": "neutral",
-        "displayName": "Paper Water",
-        "canonical": "oklch(97.6% 0.003 264.5)",
+        "displayName": "Raked Gravel",
+        "canonical": "#e8ddc6",
+        "oklch": "oklch(90.0% 0.033 85.5)",
+        "purpose": "Page ground, card fronts, ledger cells.",
         "tonalRamp": [
-          "#0b0b0c",
-          "#242526",
-          "#414243",
-          "#606163",
-          "#818284",
-          "#a4a5a7",
-          "#c8c9cb",
-          "#edeef0"
+          "#151108",
+          "#302b1f",
+          "#4d473a",
+          "#6d6556",
+          "#8e8574",
+          "#b0a793",
+          "#d4c9b4",
+          "#f8edd7"
         ]
       },
-      "wash": {
+      "gravel-2": {
         "role": "neutral",
-        "displayName": "Wash",
-        "canonical": "oklch(95.1% 0.006 255.5)",
+        "displayName": "Shaded Gravel",
+        "canonical": "#ddd0b3",
+        "oklch": "oklch(86.1% 0.041 86.7)",
+        "purpose": "Alternate slide bands; secondary control hover.",
         "tonalRamp": [
-          "#090b0e",
-          "#232528",
-          "#404245",
-          "#5f6165",
-          "#808286",
-          "#a2a5a9",
-          "#c6c9cd",
-          "#eceff3"
+          "#161105",
+          "#312b1c",
+          "#4f4735",
+          "#6e6551",
+          "#8f856e",
+          "#b2a78d",
+          "#d6c9ad",
+          "#faedd1"
         ]
       },
-      "mist": {
+      "stone": {
         "role": "neutral",
-        "displayName": "Mist",
-        "canonical": "oklch(91.1% 0.010 252.8)",
+        "displayName": "Travertine Stone",
+        "canonical": "#c7b994",
+        "oklch": "oklch(78.8% 0.052 89.8)",
+        "purpose": "Hairline dividers, figure-grid gaps, flag rings.",
         "tonalRamp": [
-          "#080b0f",
-          "#22252a",
-          "#3e4247",
-          "#5d6267",
-          "#7e8388",
-          "#a1a5ab",
-          "#c5cacf",
-          "#eaeff5"
+          "#171101",
+          "#322b15",
+          "#50472e",
+          "#706549",
+          "#918566",
+          "#b4a784",
+          "#d7caa5",
+          "#fbeecb"
         ]
       },
-      "feathered-gray": {
+      "spray": {
         "role": "neutral",
-        "displayName": "Feathered Gray",
-        "canonical": "oklch(77.4% 0.019 258.4)",
+        "displayName": "Fountain Spray",
+        "canonical": "#f6f5ef",
+        "oklch": "oklch(96.9% 0.008 98.9)",
+        "purpose": "Text on hedge; cartouche and dialog surface.",
         "tonalRamp": [
-          "#070b13",
-          "#1f252f",
-          "#3c424c",
-          "#5b626c",
-          "#7b838e",
-          "#9ea6b1",
-          "#c2cad6",
-          "#e7effc"
+          "#121210",
+          "#2c2b29",
+          "#484845",
+          "#676662",
+          "#878682",
+          "#a9a8a3",
+          "#cbcbc5",
+          "#f0efe9"
         ]
       },
-      "dilute-ink": {
+      "statuary": {
         "role": "neutral",
-        "displayName": "Dilute Ink",
-        "canonical": "oklch(53.1% 0.034 257.8)",
+        "displayName": "Statuary",
+        "canonical": "#8c8f8a",
+        "oklch": "oklch(64.6% 0.008 132.5)",
+        "purpose": "Silver key of the crossed-keys mark on light grounds.",
         "tonalRamp": [
-          "#030b19",
-          "#1b2636",
-          "#374354",
-          "#556275",
-          "#768397",
-          "#98a6bb",
-          "#bccae0",
-          "#e1f0ff"
+          "#111210",
+          "#2a2c29",
+          "#464845",
+          "#646763",
+          "#848782",
+          "#a6a9a4",
+          "#c9cbc7",
+          "#edefeb"
         ]
       },
-      "ink-current": {
+      "text": {
+        "role": "neutral",
+        "displayName": "Garden Ink",
+        "canonical": "#2b3a2f",
+        "oklch": "oklch(33.1% 0.028 153.0)",
+        "purpose": "Running text on gravel.",
+        "tonalRamp": [
+          "#09150c",
+          "#212f25",
+          "#3d4c41",
+          "#5c6a5f",
+          "#7c8a80",
+          "#9eaca2",
+          "#c2cec5",
+          "#e6f2e9"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Lichen",
+        "canonical": "#555d4b",
+        "oklch": "oklch(46.6% 0.030 127.1)",
+        "purpose": "Ledes, notes, labels, secondary data.",
+        "tonalRamp": [
+          "#0f1408",
+          "#282e1f",
+          "#434b3a",
+          "#616958",
+          "#828978",
+          "#a3ab9a",
+          "#c6cebe",
+          "#eaf1e2"
+        ]
+      },
+      "hedge": {
         "role": "primary",
-        "displayName": "Ink Current",
-        "canonical": "oklch(29.9% 0.057 262.7)",
+        "displayName": "Clipped Hedge",
+        "canonical": "#1f3b2a",
+        "oklch": "oklch(32.4% 0.046 156.1)",
+        "purpose": "Rail, primary control, on-hedge bands, card backs, tooltip, finale.",
         "tonalRamp": [
-          "#010923",
-          "#162440",
-          "#324260",
-          "#506182",
-          "#7083a5",
-          "#92a6c9",
-          "#b6caef",
-          "#daefff"
+          "#011709",
+          "#173222",
+          "#344f3e",
+          "#536d5c",
+          "#748d7d",
+          "#97af9f",
+          "#bbd1c2",
+          "#e0f5e7"
         ]
       },
-      "indigo-depth": {
+      "hedge-mid": {
         "role": "primary",
-        "displayName": "Indigo Depth",
-        "canonical": "oklch(21.9% 0.054 259.0)",
+        "displayName": "Hedge in Shade",
+        "canonical": "#2c5039",
+        "oklch": "oklch(39.7% 0.057 154.8)",
+        "purpose": "Primary hover, awake basins, scrollbar thumb, display companion line.",
         "tonalRamp": [
-          "#010a21",
-          "#14253f",
-          "#30425f",
-          "#4f6280",
-          "#6f83a3",
-          "#91a6c7",
-          "#b5cbed",
-          "#d9f0ff"
+          "#001807",
+          "#12331f",
+          "#2d513a",
+          "#4d6f59",
+          "#6f8f79",
+          "#92b19b",
+          "#b6d3bf",
+          "#dbf7e3"
         ]
       },
-      "sumi-pool": {
+      "hedge-deep": {
+        "role": "primary",
+        "displayName": "Deep Hedge",
+        "canonical": "#13261a",
+        "oklch": "oklch(24.8% 0.034 155.3)",
+        "purpose": "Display type, darkest ink, text on gilt.",
+        "tonalRamp": [
+          "#05160b",
+          "#1e3024",
+          "#3b4d41",
+          "#596b5f",
+          "#7a8b7f",
+          "#9caca1",
+          "#c0cfc4",
+          "#e5f3e9"
+        ]
+      },
+      "leaf": {
         "role": "neutral",
-        "displayName": "Sumi Pool",
-        "canonical": "oklch(14.4% 0.019 261.2)",
+        "displayName": "Young Leaf",
+        "canonical": "#9fb28f",
+        "oklch": "oklch(73.9% 0.053 130.9)",
+        "purpose": "Secondary text, Latin glosses and idle icons on hedge.",
         "tonalRamp": [
-          "#070b13",
-          "#20252f",
-          "#3c424c",
-          "#5b626c",
-          "#7c838e",
-          "#9ea5b1",
-          "#c2cad6",
-          "#e7effc"
+          "#0c1504",
+          "#242f1b",
+          "#404d34",
+          "#5d6c50",
+          "#7c8d6d",
+          "#9caf8c",
+          "#bfd2b0",
+          "#e4f6d5"
         ]
       },
-      "shu-seal": {
+      "gilt": {
+        "role": "secondary",
+        "displayName": "Gilt Bronze",
+        "canonical": "#a9853a",
+        "oklch": "oklch(63.6% 0.103 83.2)",
+        "purpose": "1px rules, fleurons, frames, focus ring, now markers, ratios.",
+        "tonalRamp": [
+          "#210c00",
+          "#3e2600",
+          "#5e4200",
+          "#806018",
+          "#a48036",
+          "#c5a25d",
+          "#e7c686",
+          "#ffeaae"
+        ]
+      },
+      "gilt-light": {
+        "role": "secondary",
+        "displayName": "Pale Gilt",
+        "canonical": "#d2b46c",
+        "oklch": "oklch(78.0% 0.098 87.5)",
+        "purpose": "Gilt on hedge; active rail basin; splash button fill.",
+        "tonalRamp": [
+          "#1d0e00",
+          "#3a2800",
+          "#59450c",
+          "#7a6329",
+          "#9d8344",
+          "#c1a45f",
+          "#e5c782",
+          "#ffecaa"
+        ]
+      },
+      "porphyry": {
         "role": "tertiary",
-        "displayName": "Shu Seal",
-        "canonical": "oklch(54.8% 0.176 32.7)",
+        "displayName": "Porphyry",
+        "canonical": "#8e2f25",
+        "oklch": "oklch(44.5% 0.131 29.3)",
+        "purpose": "Uzbekistan's mark in the comparison only.",
         "tonalRamp": [
-          "#2d0000",
-          "#510000",
-          "#742111",
-          "#994332",
-          "#bf6552",
-          "#e68874",
-          "#ffac97",
-          "#ffd1bb"
+          "#340000",
+          "#580000",
+          "#7e231a",
+          "#a24539",
+          "#c3695c",
+          "#e48d80",
+          "#ffb2a5",
+          "#ffd8cb"
+        ]
+      },
+      "water": {
+        "role": "tertiary",
+        "displayName": "Pool Water",
+        "canonical": "#6f8f8a",
+        "oklch": "oklch(62.4% 0.037 184.6)",
+        "purpose": "Chart series colour only.",
+        "tonalRamp": [
+          "#031513",
+          "#1a302d",
+          "#344d4a",
+          "#506d68",
+          "#6e8e89",
+          "#90afaa",
+          "#b4d2cd",
+          "#daf5f1"
         ]
       }
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Display",
-        "purpose": "Hero title and chapter openers."
+        "displayName": "Engraved Display",
+        "purpose": "Hero word and finale thank-you; uppercase Castoro Titling."
       },
       "headline": {
-        "displayName": "Headline",
-        "purpose": "Section headings, per-word ink-settling reveal."
+        "displayName": "Section Title",
+        "purpose": "Every slide's section title (.section-title)."
       },
       "title": {
-        "displayName": "Title",
-        "purpose": "Item headings in ledgers, sectors, future list."
+        "displayName": "Cartouche Title",
+        "purpose": "Card, cartouche, timeline and comparison headings; 0.06-0.08em tracking."
       },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Reading copy; ledes cap at 62ch."
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Headline numbers in ledgers and cards, lining figures, in hedge."
       },
       "lede": {
         "displayName": "Lede",
-        "purpose": "One-paragraph section summary in dilute ink."
+        "purpose": "One muted paragraph under a section title, max 60ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 19px root, 21px at >=1600px."
+      },
+      "latin": {
+        "displayName": "Latin Gloss",
+        "purpose": "Italic Latin names under rail stops, cards and subtitles."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Rail items and control labels; never above a heading."
+        "purpose": "Uppercase rail names, control text, comparison topics."
       },
-      "inscription": {
-        "displayName": "Inscription",
-        "purpose": "Japanese words hung vertically beside headings."
+      "note": {
+        "displayName": "Source Note",
+        "purpose": "Source lines and figure captions."
       }
     },
     "shadows": [
       {
-        "name": "overlay",
-        "value": "0 18px 40px -18px rgba(10,26,51,0.35)",
-        "purpose": "Help overlay only."
+        "name": "overlay-lift-tooltip",
+        "value": "0 10px 24px -12px rgba(19,38,26,0.6)",
+        "purpose": "Chart tooltips only."
       },
       {
-        "name": "tooltip",
-        "value": "0 10px 24px -12px rgba(10,26,51,0.6)",
-        "purpose": "Chart tooltips only."
+        "name": "overlay-lift-dialog",
+        "value": "0 18px 40px -18px rgba(19,38,26,0.45)",
+        "purpose": "Keyboard help dialog only."
       }
     ],
     "motion": [
       {
-        "name": "ease-ink",
+        "name": "ease-axis",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Every reveal, drift and transition."
+        "purpose": "Every reveal, rule draw, chart grow and control transition."
       },
       {
-        "name": "settle",
-        "value": "opacity .12→1, blur 7px→0, translateY .35em→0 over 1.1s, 40ms word stagger",
-        "purpose": "Ink settling into focus on reveal."
+        "name": "word-rise",
+        "value": "opacity 1s, transform 1.1s, clip-path 1.1s; stagger 55ms per word; from opacity 0.15, translateY(0.55em), clip inset(0 0 45% 0)",
+        "purpose": "Section titles rising out of a clipped line."
       },
       {
-        "name": "marble-drift",
-        "value": "background-position 0%→100% over 1.6s",
-        "purpose": "Primary control hover."
+        "name": "axial-unfold",
+        "value": "opacity 1s, clip-path 1.3s from inset(0 30% 0 30%)",
+        "purpose": "Blocks unfold symmetrically from their centre line ([data-rev])."
       },
       {
-        "name": "aurora",
-        "value": "background-position 0%→160% over 60s linear",
-        "purpose": "Future marbled wash drift."
+        "name": "axis-rule",
+        "value": "transform scaleX(0)->1, origin center, 1.4s",
+        "purpose": "Rules draw outward from the middle."
+      },
+      {
+        "name": "chart-grow",
+        "value": "scaleY/scaleX from 0.02, 1.5s; line draw stroke-dashoffset 2.6s",
+        "purpose": "Bars grow from their baseline; lines draw stroke by stroke."
+      },
+      {
+        "name": "rail-jet",
+        "value": "1.6s alternate infinite, scaleY 0.75->1.1",
+        "purpose": "The current rail basin's fountain plays."
+      },
+      {
+        "name": "card-flip",
+        "value": "700ms cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Fountain card flip."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Pinned stages become normal bands; masks removed."
       }
     ],
     "breakpoints": [
       {
-        "name": "sm",
-        "value": "640px"
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Rail appears (220px); below it a 3rem top bar."
       },
       {
-        "name": "md",
-        "value": "768px"
-      },
-      {
-        "name": "lg (rail appears)",
-        "value": "1024px"
-      },
-      {
-        "name": "xl (readouts)",
-        "value": "1280px"
-      },
-      {
-        "name": "root 20px",
-        "value": "1600px"
+        "name": "xl-type",
+        "value": "1600px",
+        "purpose": "Root type rises from 19px to 21px."
       }
     ]
   },
@@ -232,94 +370,134 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Marbled indigo pill that starts the talk.",
-      "html": "<button class=\"ds-btn-primary\"><span>TAQDIMOTNI BOSHLASH</span><span class=\"ds-btn-disc\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"><path d=\"M12 5v14M19 12l-7 7-7-7\"/></svg></span></button>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 12px 0 28px;border:0;border-radius:999px;background:var(--color-depth,#0a1a33) linear-gradient(115deg,#0a1a33 0%,#1e2d4a 22%,#0a1a33 38%,#2b3d5e 55%,#0a1a33 70%,#12213d 100%);background-size:180% auto;background-position:0% 50%;color:#f6f7f9;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.16em;cursor:pointer;transition:background-position 1.6s cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{background-position:100% 50%}.ds-btn-primary:focus-visible{outline:2px solid #1e2d4a;outline-offset:3px}.ds-btn-primary:active{transform:scale(.98)}.ds-btn-disc{display:grid;place-items:center;width:36px;height:36px;border-radius:999px;border:1px solid rgba(246,247,249,.25)}"
+      "description": "Hedge control with an opening outline and a framed gilt arrow; the one primary action per view.",
+      "html": "<button class=\"ds-btn-primary\"><span>Taqdimotni boshlash</span><span class=\"ds-btn-primary__icon\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/></svg></span></button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:1rem;height:3.5rem;padding:0 0.75rem 0 1.75rem;background:var(--color-hedge,#1f3b2a);color:var(--color-spray,#f6f5ef);border:0;border-radius:0;outline:1px solid var(--color-hedge,#1f3b2a);outline-offset:4px;cursor:pointer;font-family:'Alegreya Sans',ui-sans-serif,system-ui,sans-serif;font-size:0.74rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;transition:outline-offset .5s cubic-bezier(0.16,1,0.3,1),background-color .5s cubic-bezier(0.16,1,0.3,1);} .ds-btn-primary__icon{display:grid;place-items:center;width:2.25rem;height:2.25rem;border:1px solid color-mix(in oklab,var(--color-gilt-light,#d2b46c) 50%,transparent);color:var(--color-gilt-light,#d2b46c);transition:transform .5s;} .ds-btn-primary:hover{background:var(--color-hedge-mid,#2c5039);outline-offset:7px;} .ds-btn-primary:hover .ds-btn-primary__icon{transform:translateY(2px);} .ds-btn-primary:active{transform:scale(0.98);} .ds-btn-primary:focus-visible{outline:2px solid var(--color-gilt,#a9853a);outline-offset:3px;}"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Hairline pill for the sources jump.",
-      "html": "<a class=\"ds-btn-secondary\" href=\"#\">MANBALAR</a>",
-      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;height:56px;padding:0 28px;border:1px solid #aeb6c2;border-radius:999px;color:#0a1a33;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.16em;text-decoration:none;transition:border-color .3s}.ds-btn-secondary:hover{border-color:#0a1a33}.ds-btn-secondary:focus-visible{outline:2px solid #1e2d4a;outline-offset:3px}"
+      "description": "Square bordered link-button on gravel.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">Manbalar</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;height:3.5rem;padding:0 1.75rem;color:var(--color-hedge-deep,#13261a);text-decoration:none;border:1px solid color-mix(in oklab,var(--color-hedge,#1f3b2a) 40%,transparent);border-radius:0;font-family:'Alegreya Sans',ui-sans-serif,system-ui,sans-serif;font-size:0.74rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;transition:border-color .3s,background-color .3s;} .ds-btn-secondary:hover{border-color:var(--color-hedge,#1f3b2a);background:var(--color-gravel-2,#ddd0b3);} .ds-btn-secondary:focus-visible{outline:2px solid var(--color-gilt,#a9853a);outline-offset:3px;}"
     },
     {
-      "name": "Rail Item",
+      "name": "Splash Button",
+      "kind": "button",
+      "refersTo": "button-splash",
+      "description": "Finale's pale gilt control; outline opens on hover.",
+      "html": "<button class=\"ds-btn-splash\">Boshiga qaytish</button>",
+      "css": ".ds-btn-splash{height:60px;padding:0 1.6rem 0 2rem;background:var(--color-gilt-light,#d2b46c);color:var(--color-hedge-deep,#13261a);border:0;border-radius:0;outline:1px solid var(--color-gilt-light,#d2b46c);outline-offset:5px;cursor:pointer;font-family:'Alegreya Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;transition:transform .5s cubic-bezier(0.16,1,0.3,1),outline-offset .5s cubic-bezier(0.16,1,0.3,1);} .ds-btn-splash:hover{transform:scale(1.03);outline-offset:8px;} .ds-btn-splash:active{transform:scale(0.97);} .ds-btn-splash:focus-visible{outline:2px solid var(--color-spray,#f6f5ef);outline-offset:3px;}"
+    },
+    {
+      "name": "Rail Stop",
       "kind": "nav",
-      "refersTo": "rail-item-active",
-      "description": "Section link in the left rail; active item sits in an indigo disc.",
-      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail-item is-active\" href=\"#\"><span class=\"ds-rail-dot\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><path d=\"M12 2.7 5 12a7 7 0 1 0 14 0z\"/></svg></span>RAQAMLARDA</a><a class=\"ds-rail-item\" href=\"#\"><span class=\"ds-rail-dot\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg></span>TARIX</a></nav>",
-      "css": ".ds-rail{display:flex;flex-direction:column;gap:2px;width:190px}.ds-rail-item{display:flex;align-items:center;gap:14px;padding:6px 12px 6px 6px;border-radius:999px;color:#606d80;font:500 13px/1 Commissioner,sans-serif;letter-spacing:.14em;text-decoration:none;transition:color .3s}.ds-rail-item:hover{color:#0a1a33}.ds-rail-item:focus-visible{outline:2px solid #1e2d4a;outline-offset:2px}.ds-rail-dot{display:grid;place-items:center;width:32px;height:32px;border-radius:999px;color:#606d80;transition:background .5s,color .5s}.ds-rail-item.is-active{color:#0a1a33}.ds-rail-item.is-active .ds-rail-dot{background:#0a1a33;color:#f6f7f9}"
+      "refersTo": "rail-basin-active",
+      "description": "Rail entries: idle, awake and current basins on the gilt axis.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-rail__stop\"><span class=\"ds-rail__basin ds-rail__basin--awake\"></span><span><span class=\"ds-rail__label\">Davlat</span><em class=\"ds-rail__latin\">Civitas</em></span></a><a class=\"ds-rail__stop ds-rail__stop--on\" aria-current=\"true\"><span class=\"ds-rail__basin\"></span><span><span class=\"ds-rail__label\">Tarix</span><em class=\"ds-rail__latin\">Historia</em></span></a><a class=\"ds-rail__stop\"><span class=\"ds-rail__basin\"></span><span><span class=\"ds-rail__label\">Daromad</span><em class=\"ds-rail__latin\">Aerarium</em></span></a></nav>",
+      "css": ".ds-rail{display:flex;flex-direction:column;gap:2px;width:220px;padding:1rem;background:var(--color-hedge,#1f3b2a);} .ds-rail__stop{display:flex;align-items:center;gap:.75rem;padding:3px 8px 3px 6px;color:color-mix(in oklab,var(--color-spray,#f6f5ef) 75%,transparent);cursor:pointer;transition:color .3s;} .ds-rail__stop:hover{color:var(--color-spray,#f6f5ef);} .ds-rail__stop:focus-visible{outline:2px solid var(--color-gilt,#a9853a);outline-offset:3px;} .ds-rail__basin{width:2rem;height:2rem;border-radius:9999px;border:1px solid color-mix(in oklab,var(--color-gilt-light,#d2b46c) 35%,transparent);background:var(--color-hedge,#1f3b2a);transition:background-color .5s,border-color .5s;} .ds-rail__basin--awake{background:var(--color-hedge-mid,#2c5039);border-color:color-mix(in oklab,var(--color-gilt-light,#d2b46c) 70%,transparent);} .ds-rail__stop--on{color:var(--color-gilt-light,#d2b46c);} .ds-rail__stop--on .ds-rail__basin{background:var(--color-gilt-light,#d2b46c);border-color:var(--color-gilt-light,#d2b46c);} .ds-rail__label{display:block;font-family:'Alegreya Sans',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;} .ds-rail__latin{display:block;font-family:'Alegreya Sans',sans-serif;font-size:.78rem;color:color-mix(in oklab,var(--color-leaf,#9fb28f) 80%,transparent);}"
     },
     {
-      "name": "Kanji Flashcard",
+      "name": "Fountain Card",
       "kind": "card",
-      "refersTo": "flashcard",
-      "description": "Term card that flips to its meaning.",
-      "html": "<button class=\"ds-card\"><span class=\"ds-card-inner\"><span class=\"ds-card-front\"><span class=\"ds-label\">KAIZEN</span><span class=\"ds-kanji\">改善</span><span>Doimiy takomillashtirish</span></span><span class=\"ds-card-back\"><span class=\"ds-kanji-sm\">改善</span><span>Har bir ishchi har kuni kichik yaxshilanish taklif qiladi.</span></span></span></button>",
-      "css": ".ds-card{width:220px;height:300px;padding:0;border:0;background:none;perspective:2000px;cursor:pointer;font:350 16px/1.5 Commissioner,sans-serif}.ds-card-inner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.77,0,.175,1)}.ds-card:hover .ds-card-inner,.ds-card:focus-visible .ds-card-inner{transform:rotateY(180deg)}.ds-card-front,.ds-card-back{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:24px;border-radius:16px;backface-visibility:hidden;text-align:left}.ds-card-front{background:#f6f7f9;border:1px solid #dde2e8;color:#1e2d4a}.ds-card-back{background:#0a1a33;color:#dde2e8;transform:rotateY(180deg);justify-content:flex-start;gap:12px}.ds-label{font-size:12px;letter-spacing:.18em;color:#606d80}.ds-kanji{align-self:center;writing-mode:vertical-rl;font:500 64px/1 'Shippori Mincho B1',serif;color:#0a1a33}.ds-kanji-sm{font:500 28px/1 'Shippori Mincho B1',serif;color:#aeb6c2}"
+      "refersTo": "fountain-card",
+      "description": "Framed gravel cartouche front of the flip card: engraved title, Latin gloss, fleuron rule, figure.",
+      "html": "<article class=\"ds-card ds-frame\" tabindex=\"0\"><h3 class=\"ds-card__title\">Muzeylar</h3><em class=\"ds-card__latin\">Musei Vaticani</em><div class=\"ds-card__rule\"><span></span><svg viewBox=\"0 0 40 24\" width=\"28\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M20 3 C17 7 17 12 20 17 C23 12 23 7 20 3 Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M20 17 C15 14 10 15 8 18 C6 21 9 23 11 21 C12.5 19.5 11 18 9.8 18.6\"/><path d=\"M20 17 C25 14 30 15 32 18 C34 21 31 23 29 21 C27.5 19.5 29 18 30.2 18.6\"/><path d=\"M20 17 V22\"/></svg><span></span></div><p class=\"ds-card__figure\">6,8 mln</p><p class=\"ds-card__meaning\">tashrif, 2024</p></article>",
+      "css": ".ds-frame{position:relative;border:1px solid color-mix(in oklab,var(--color-gilt,#a9853a) 70%,transparent);outline:1px solid color-mix(in oklab,var(--color-gilt,#a9853a) 45%,transparent);outline-offset:-7px;} .ds-card{display:flex;flex-direction:column;height:340px;padding:1.5rem;background:var(--color-gravel,#e8ddc6);color:var(--color-hedge-deep,#13261a);border-radius:0;transition:background-color .3s;} .ds-card:hover{background:var(--color-gravel-2,#ddd0b3);} .ds-card:focus-visible{outline:2px solid var(--color-gilt,#a9853a);outline-offset:3px;} .ds-card__title{margin:0;font-family:'Castoro Titling','Times New Roman',serif;font-weight:400;text-transform:uppercase;line-height:1.02;font-size:1.35rem;letter-spacing:.06em;} .ds-card__latin{margin-top:.25rem;font-family:'Alegreya Sans',sans-serif;font-size:.92rem;color:var(--color-muted,#555d4b);} .ds-card__rule{margin-top:auto;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem;color:var(--color-gilt,#a9853a);} .ds-card__rule span{flex:1;height:1px;background:currentColor;opacity:.7;} .ds-card__figure{margin:0;font-family:'Alegreya Sans',sans-serif;font-size:2.4rem;font-weight:500;line-height:1;color:var(--color-hedge,#1f3b2a);} .ds-card__meaning{margin:.5rem 0 0;font-family:'Alegreya Sans',sans-serif;color:var(--color-text,#2b3a2f);}"
     },
     {
-      "name": "Ledger Row",
-      "kind": "custom",
-      "description": "Figure + label on a hairline rule, with its source.",
-      "html": "<div class=\"ds-ledger\"><span class=\"ds-fig\">~230%</span><span><span class=\"ds-lbl\">Davlat qarzi / YaIM — rivojlangan davlatlar ichida eng yuqori</span><span class=\"ds-src\">XVF WEO, 2025-oktabr</span></span></div>",
-      "css": ".ds-ledger{display:grid;grid-template-columns:10.5rem 1fr;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid #dde2e8;max-width:620px}.ds-fig{font:300 48px/1 Commissioner,sans-serif;letter-spacing:-.02em;color:#0a1a33}.ds-lbl{display:block;font:350 17px/1.4 Commissioner,sans-serif;color:#0a1a33}.ds-src{display:block;margin-top:6px;font:350 13px/1.4 Commissioner,sans-serif;color:#606d80}"
+      "name": "Readout Cartouche",
+      "kind": "card",
+      "refersTo": "readout-card",
+      "description": "Framed spray panel of label/value readouts over a photograph.",
+      "html": "<dl class=\"ds-readout ds-frame\"><dt class=\"ds-readout__title\">Davlat pasporti</dt><div class=\"ds-readout__rule\"><span></span><svg viewBox=\"0 0 40 24\" width=\"28\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M20 3 C17 7 17 12 20 17 C23 12 23 7 20 3 Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M20 17 C15 14 10 15 8 18 C6 21 9 23 11 21 C12.5 19.5 11 18 9.8 18.6\"/><path d=\"M20 17 C25 14 30 15 32 18 C34 21 31 23 29 21 C27.5 19.5 29 18 30.2 18.6\"/><path d=\"M20 17 V22\"/></svg><span></span></div><div class=\"ds-readout__row\"><dt>Maydoni</dt><dd>0,49 km²</dd></div><div class=\"ds-readout__row\"><dt>Aholisi</dt><dd>882</dd></div></dl>",
+      "css": ".ds-frame{position:relative;border:1px solid color-mix(in oklab,var(--color-gilt,#a9853a) 70%,transparent);outline:1px solid color-mix(in oklab,var(--color-gilt,#a9853a) 45%,transparent);outline-offset:-7px;} .ds-readout{width:16rem;margin:0;padding:1.25rem;background:color-mix(in oklab,var(--color-spray,#f6f5ef) 95%,transparent);font-family:'Alegreya Sans',sans-serif;} .ds-readout__title{font-family:'Castoro Titling','Times New Roman',serif;font-weight:400;text-transform:uppercase;line-height:1.02;font-size:1.05rem;letter-spacing:.12em;color:var(--color-hedge-deep,#13261a);} .ds-readout__rule{display:flex;align-items:center;gap:.75rem;margin:.5rem 0 .25rem;color:var(--color-gilt,#a9853a);} .ds-readout__rule span{flex:1;height:1px;background:currentColor;opacity:.7;} .ds-readout__row{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid color-mix(in oklab,var(--color-stone,#c7b994) 60%,transparent);} .ds-readout__row:last-child{border:0;} .ds-readout__row dt{font-size:.875rem;color:var(--color-muted,#555d4b);} .ds-readout__row dd{margin:0;font-size:1.125rem;font-weight:500;color:var(--color-hedge-deep,#13261a);}"
     },
     {
-      "name": "Vertical Inscription Heading",
+      "name": "Fleuron Rule",
       "kind": "custom",
-      "description": "Heading with its Japanese word hung vertically beside it.",
-      "html": "<div class=\"ds-insc\"><span class=\"ds-insc-jp\">未来</span><h2 class=\"ds-h2\">Yangi o‘sish manbalari</h2></div>",
-      "css": ".ds-insc{display:flex;align-items:flex-start;gap:24px}.ds-insc-jp{writing-mode:vertical-rl;padding-top:8px;font:500 22px/1 'Shippori Mincho B1',serif;letter-spacing:.3em;color:#606d80}.ds-h2{margin:0;font:250 64px/1.02 Commissioner,sans-serif;letter-spacing:-.025em;color:#0a1a33}"
+      "refersTo": "",
+      "description": "Gilt fleuron between two 1px rules that draw outward from the centre.",
+      "html": "<div class=\"ds-fleuron-rule\" aria-hidden=\"true\"><span></span><svg viewBox=\"0 0 40 24\" width=\"28\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M20 3 C17 7 17 12 20 17 C23 12 23 7 20 3 Z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M20 17 C15 14 10 15 8 18 C6 21 9 23 11 21 C12.5 19.5 11 18 9.8 18.6\"/><path d=\"M20 17 C25 14 30 15 32 18 C34 21 31 23 29 21 C27.5 19.5 29 18 30.2 18.6\"/><path d=\"M20 17 V22\"/></svg><span></span></div>",
+      "css": ".ds-fleuron-rule{display:flex;align-items:center;gap:.75rem;max-width:30rem;color:var(--color-gilt,#a9853a);} .ds-fleuron-rule span{flex:1;height:1px;background:currentColor;opacity:.7;transform-origin:center;animation:ds-axis 1.4s cubic-bezier(0.16,1,0.3,1) both;} .ds-fleuron-rule:hover span{opacity:1;} @keyframes ds-axis{from{transform:scaleX(0)}to{transform:none}}"
+    },
+    {
+      "name": "Chart Tooltip",
+      "kind": "custom",
+      "refersTo": "tooltip",
+      "description": "Hedge tooltip with the overlay-lift shadow; the only lifted element besides the help dialog.",
+      "html": "<div class=\"ds-tip\" role=\"status\">2024, operatsion natija: +1,6 mln €</div>",
+      "css": ".ds-tip{display:inline-block;padding:.5rem .875rem;background:var(--color-hedge,#1f3b2a);color:var(--color-spray,#f6f5ef);font-family:'Alegreya Sans',sans-serif;font-size:.875rem;white-space:nowrap;border-radius:0;box-shadow:0 10px 24px -12px rgba(19,38,26,0.6);}"
     }
   ],
   "narrative": {
-    "northStar": "The Suminagashi Basin",
-    "overview": "The page is one shallow basin of water on which ink is dropped. Each era of Japan's economy is a drop that spreads, thins and is pushed outward by the next, so the newest drop is always the darkest region. The same area-preserving marbling map drives the live WebGL hero, the hairline history rings, and the computed marbled textures on controls, the endpaper band and the future wash — the ink is never a picture of ink.\n\nIt is a projected talk, not a scrolling brochure: every presenter stop is a full-viewport slide holding one idea, reached with → / PageDown. Paper-white water carries reading; two indigo \"pools\" (the robot section and the finale) mark the climax and the close. A single vermilion seal is the only warm color on the page.",
+    "northStar": "The Axial Garden Plan",
+    "overview": "**Creative North Star: \"The Axial Garden Plan\"**\n\nThe presentation is walked as the Vatican Gardens drawn on an engraved plan: one grand axis runs from the dome to the fountains, and each presenter stop is a parterre that carries one figure. The ground is raked gravel, warm buff stone with fine horizontal rake lines; clipped hedge green owns the navigation rail, the full-bleed emphasis bands and the finale; gilt bronze draws the axes, the hairline frames, the fleurons and the \"now\" marker. Nothing is lit, glossy or gilded in gradient: gold is a 1px line, never a fill field.\n\nDensity is one idea per viewport. A stop is a full-height slide with a section title in engraved, widely spaced Roman capitals, a muted lede, then one composition (a ledger of figures, four fountain cards, a chart drawn as an allée, a scale-zoom map). Copy reads in a sturdy humanist sans with lining figures, sized for a projector at the back of a classroom (19px root, 21px at 1600px and wider).\n\nMotion follows the plan: everything opens along an axis. Words rise out of a clipped line, blocks unfold symmetrically from their centre line, rules draw from the middle outward, chart marks grow from their baseline, and the rail's fountain jets wake one by one as the presenter advances. Content starts faint (15% opacity), never invisible, on desktop.",
     "keyCharacteristics": [
-      "Cool paper-white ground, indigo and carbon ink that thins to feathered gray — no cream.",
-      "Light-weight humanist sans at large sizes, with Japanese words hung as vertical mincho inscriptions beside headings.",
-      "Structure from hairline rules and 1px gaps, never from drop shadows or boxed cards.",
-      "Motion is ink: spreading (radial bloom), thinning (opacity + blur resolving to focus), dissolving (masked erase with blur).",
-      "Every figure carries its source and year; approximations wear \"~\"."
+      "Raked-gravel ground (`gravel` with 1px rake lines every 7px) as the only texture.",
+      "Clipped-hedge rail of nine stops, each a circular basin whose jet sleeps, wakes, or plays.",
+      "Double hairline gilt frames with corner scrolls around every photograph, map and cartouche.",
+      "Engraved uppercase Castoro Titling for display; Alegreya Sans for everything read.",
+      "Square corners everywhere; circles only where water stands (basins, flag roundels, loader ring).",
+      "Axial reveals on a single long ease-out (`cubic-bezier(0.16, 1, 0.3, 1)`)."
     ],
     "rules": [
       {
-        "name": "The Newest Drop Is Darkest Rule",
-        "body": "Wherever time is shown, the present is the darkest mark and the past thins toward feathered gray — the year's last two digits, the ring bands, the ladder rows, the aging line.",
+        "name": "The Hedge Owns Rule",
+        "body": "Hedge green is a structural ground (rail, emphasis bands, finale, card backs, primary control), never a text accent on gravel beyond display type and figures.",
         "section": "colors"
       },
       {
-        "name": "The One Seal Rule",
-        "body": "Vermilion marks only the mark and \"now\". It is never a button, a link color or a series color.",
+        "name": "The Gilt Line Rule",
+        "body": "Gilt is drawn, not poured: 1px rules, frames, fleurons, markers. Its only solid fills are the active rail basin, the small timeline/ladder diamonds and the finale's splash button.",
         "section": "colors"
       },
       {
-        "name": "The Inscription, Not Kicker, Rule",
-        "body": "A Japanese word belongs beside its heading in vertical writing (writing-mode: vertical-rl, 0.3em tracking), never as a small line above it.",
+        "name": "The Porphyry Ration Rule",
+        "body": "Porphyry marks Uzbekistan in the comparison and nothing else. It is never an error, alert or emphasis colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Engraved Capitals Rule",
+        "body": "Castoro Titling is always uppercase, weight 400, letter-spaced 0.04em or wider. It never sets running text, and figures in ledgers use Alegreya Sans unless the figure is itself a monument (the timeline year, the Davlat ledger values).",
         "section": "typography"
       },
       {
-        "name": "The Density Is Depth Rule",
-        "body": "To bring something forward, give it darker ink or put it on a pool; never add a card shadow.",
+        "name": "The Every Figure Sourced Rule",
+        "body": "Every data block ends in a note-style source line in `muted`.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Stop One Viewport Rule",
+        "body": "A presenter stop holds one idea and fills the screen; a new idea is a new stop.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Plan Rule",
+        "body": "Surfaces are flat and framed. A shadow appears only beneath a layer that floats temporarily above the plan, and it is a soft hedge-tinted drop, never a hard offset.",
         "section": "elevation"
+      },
+      {
+        "name": "The Square Hedge Rule",
+        "body": "Nothing clipped from hedge or stone is rounded; a circle always means a basin.",
+        "section": "shapes"
       }
     ],
     "dos": [
-      "Do give every figure a source and a year, and prefix rounded values with \"~\".",
-      "Do make each presenter stop one full-viewport slide with one idea.",
-      "Do compute ink (marbling map, fluid solver) instead of drawing pictures of ink.",
-      "Do hang Japanese words vertically beside headings.",
-      "Do keep chart text ≥14px at projector size and give every chart a \"Jadval ko‘rinishi\" table view."
+      "Do lay every reading surface on raked gravel (`gravel` with rake lines `rgba(120,100,60,0.05)` every 7px) or a hedge band, alternating with `gravel-2` for rhythm.",
+      "Do frame photographs, maps and cartouches with the double hairline gilt frame and corner scrolls, padded 9px.",
+      "Do set section titles in uppercase Castoro Titling and pair them with a `muted` lede of at most 60ch.",
+      "Do open content along an axis: words rising from a clipped line, blocks unfolding from their centre, rules drawing outward, on `cubic-bezier(0.16, 1, 0.3, 1)`; and turn every pinned stage into a normal band under reduced motion.",
+      "Do end each data block with a source note and offer a table view for every chart."
     ],
     "donts": [
-      "Don't put a kicker or eyebrow label above a heading.",
-      "Don't use vermilion for anything but the seal and \"now\".",
-      "Don't use drop shadows on cards or sections; depth is ink density.",
-      "Don't use gradient text, glass or blur as decoration.",
-      "Don't show on-screen interaction instructions to the audience — they live in the \"?\" overlay."
+      "Don't round a control, card or frame; circles are for basins, flag roundels and the loader only.",
+      "Don't use porphyry for anything other than Uzbekistan in the comparison.",
+      "Don't pour gilt into gradients or large fills; it is line work and markers.",
+      "Don't shadow persistent surfaces; only floating tooltip and dialog layers lift.",
+      "Don't set Castoro Titling in lowercase, bold, or for running text.",
+      "Don't let a reveal start invisible on desktop; content begins at 15% opacity."
     ]
   }
 }

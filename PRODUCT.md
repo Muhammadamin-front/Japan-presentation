@@ -12,41 +12,44 @@ React + Vite + TypeScript + Tailwind CSS + shadcn project structure (`src/compon
 
 ## Users
 
-- **Presenter:** a university/college student giving a 10–15 minute spoken presentation on the Japanese economy for an economics class, replacing a PowerPoint deck with this website. Drives the page live from their own MacBook, scrolling or pressing keys while speaking.
-- **Audience:** classmates and the economics teacher watching a projected screen from a distance. They read headlines and numbers, not paragraphs.
+- **Presenter:** a university/college student giving a 10–15 minute spoken presentation on the economy of Vatican City (the Holy See and the City State) for an economics class, replacing a PowerPoint deck with this website. Drives the page live from their own MacBook with keys or a clicker.
+- **Audience:** classmates and the economics teacher in Uzbekistan watching a projected screen from a distance. They read headlines and numbers, not paragraphs.
 
 ## Product Purpose
 
-A scroll-driven presentation website about Japan's economy: post-war history, key figures, industry, robotics and its economic importance, current problems, and the outlook. Success = the presenter can speak through the whole topic in order, every key number is readable from the back of the room, and the robotics section stands out as the memorable moment.
+A scroll-driven presentation about how the world's smallest state (0,49 km², ~880 residents, no taxes, no currency of its own) funds a global institution: history, revenue sources (donations, Vatican Museums, IOR bank, APSA real estate), deficits and scandals, a dedicated Uzbekistan ↔ Vatican comparison, and the outlook. Success = the presenter can speak through the topic in order, every key number is readable from the back of the room, and the Uzbekistan comparison is the memorable moment.
 
 ## Operating Context
 
 - Projected on a classroom screen/TV, likely 1280–1920px wide, sometimes with washed-out contrast.
-- Presenter advances with trackpad scroll or keyboard (arrow keys / PageDown / Space — also what presentation clickers send).
-- Requires internet during the talk for the Spline 3D robot scene and web fonts.
+- Presenter advances with arrow keys / PageDown / Space (what presentation clickers send).
+- Requires internet during the talk only for web fonts; photos, flags and map geometry are local.
 
 ## Capabilities and Constraints
 
-- Language: **Uzbek (Latin script)** for all copy. Japanese words (日本, ロボット, ものづくり) may appear as accents only.
-- Must integrate the user's supplied components: Spline 3D robot + Spotlight + Card (robot.md, required), plus the animation prompts in `~/Desktop/Prompt` mapped to sections.
-- Numbers must come from public sources (IMF, World Bank, IFR World Robotics, Statistics Bureau of Japan, Cabinet Office, JNTO, Ministry of Finance) and be labelled with year; rounded/approximate values are marked with "~".
+- Language: **Uzbek (Latin script)** for all copy. Latin (Civitas Vaticana, Gratias) may appear as accents only.
+- Integrates animation prompts from `~/Desktop/Prompt` mapped to sections (see the surface brief).
+- Numbers come from public sources (Holy See Secretariat for the Economy, APSA, IOR, Peter's Pence reports, Vatican Museums, Uzbekistan Statistics Committee, Ministry of Economy and Finance, Tourism Committee, UNESCO) and are labelled with year; rounded/approximate values are marked with "~".
+- Tone: neutral economic analysis — no religious promotion or judgement.
+- The Uzbekistan comparison lives only in its own section (user decision).
 
 ## Brand Commitments
 
-None beyond the topic itself (Japan). No presenter name supplied yet — leave a clearly editable placeholder rather than inventing one.
+None beyond the topic itself (Vatican City). No presenter name supplied — `PRESENTER` in `src/lib/data.ts` stays an editable blank.
 
 ## Evidence on Hand
 
-- No images or brand assets supplied. The Spline scene URL from robot.md is the only external visual asset.
+- Photos: Wikimedia Commons (CC0 / CC BY / CC BY-SA / public domain), credited on the sources slide and embedded in each file.
+- Maps: Natural Earth (public domain), OpenStreetMap relation 36989 (ODbL).
 - Absent: presenter name, group, university name. Do not fabricate.
 
 ## Product Principles
 
 1. The speaker leads; the page supports. One idea per screen, big numbers, short sentences the presenter can expand on aloud.
 2. Every figure is sourced and dated; approximations are labelled.
-3. Robotics is the climax — tie it explicitly to economics (labour shortage, productivity, exports), not just "cool tech".
+3. The comparison with Uzbekistan is the climax — same scale, honest ratios, no false equivalence (the Vatican has no GDP).
 4. It must run reliably on a MacBook during a live talk: nothing blocks scrolling, heavy effects pause off-screen.
 
 ## Accessibility & Inclusion
 
-Projection readability: high contrast, large type, `prefers-reduced-motion` respected.
+Projection readability: high contrast, large type, `prefers-reduced-motion` respected, every chart has a table view.

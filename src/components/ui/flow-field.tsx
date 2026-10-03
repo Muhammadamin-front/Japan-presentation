@@ -2,16 +2,16 @@
 
 /**
  * @name: FlowField (motion.md, kokonutui — MIT)
- * Adapted to the ink world: an "ink" theme draws dark indigo currents on
- * paper-white water, the canvas sizes to its container instead of the window,
- * and the loop pauses when the section is off-screen.
+ * Adapted to the garden world: a "fountain" theme draws gilt and spray currents
+ * across a dark basin of hedge-green water, the canvas sizes to its container
+ * instead of the window, and the loop pauses when the section is off-screen.
  */
 
 import type { ReactNode } from "react"
 import { useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 
-type ColorTheme = "ink" | "aurora" | "ember" | "ocean"
+type ColorTheme = "fountain" | "aurora" | "ember" | "ocean"
 type ParticleDensity = "sparse" | "medium" | "dense"
 
 interface Particle {
@@ -47,7 +47,7 @@ const PARTICLE_COUNTS: Record<ParticleDensity, number> = {
 }
 
 const THEMES: Record<ColorTheme, ThemeConfig> = {
-  ink: { hueStart: 214, hueRange: 16, saturation: 42, lightness: 22, bg: "246, 247, 249", trailAlpha: 0.045, size: 0.9 },
+  fountain: { hueStart: 38, hueRange: 26, saturation: 48, lightness: 66, bg: "19, 38, 26", trailAlpha: 0.05, size: 1 },
   aurora: { hueStart: 120, hueRange: 200, saturation: 90, lightness: 62, bg: "5, 5, 8", trailAlpha: 0.06, size: 1.3 },
   ember: { hueStart: 0, hueRange: 55, saturation: 95, lightness: 58, bg: "8, 4, 2", trailAlpha: 0.07, size: 1.3 },
   ocean: { hueStart: 180, hueRange: 90, saturation: 88, lightness: 60, bg: "2, 6, 10", trailAlpha: 0.06, size: 1.3 },
@@ -64,7 +64,7 @@ function fieldAngle(x: number, y: number, t: number): number {
   )
 }
 
-export default function FlowField({ className, children, theme = "ink", density = "medium" }: FlowFieldProps) {
+export default function FlowField({ className, children, theme = "fountain", density = "medium" }: FlowFieldProps) {
   const hostRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -170,7 +170,7 @@ export default function FlowField({ className, children, theme = "ink", density 
   return (
     <div ref={hostRef} className={cn("relative w-full overflow-hidden", className)} style={{ background: `rgb(${bg})` }}>
       <canvas aria-hidden="true" className="pointer-events-none absolute inset-0" ref={canvasRef} />
-      {/* Radial vignette — focuses centre, dims edges back into paper */}
+      {/* Radial vignette — focuses centre, dims edges back into the basin */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"

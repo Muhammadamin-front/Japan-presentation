@@ -1,94 +1,86 @@
-import { useState } from "react"
 import { ArrowDown } from "lucide-react"
-import { InkBasin } from "@/components/ui/ink-basin"
-import { useMarble } from "@/hooks/useMarble"
-import { Seal } from "@/components/Seal"
+import { Corners, FleuronRule, Keys } from "@/components/Ornament"
+import { FountainSquare } from "@/components/ui/fountain-square"
 import { HERO_READOUTS, PRESENTER } from "@/lib/data"
 import { scrollToId } from "@/lib/scroll"
 import { delay, wordIndex } from "@/lib/utils"
 
 export function Hero() {
-  const [drops, setDrops] = useState(0)
-  const marble = useMarble("ink", 360, 90, 5)
-
   return (
-    <section id="kirish" data-stop aria-label="Kirish" className="relative h-svh min-h-[640px]">
-      <InkBasin onInkDrop={setDrops} className="h-full w-full">
-        {/* Still margin: paper wash keeps the title legible whatever the ink does */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,var(--color-paper)_0%,var(--color-paper)_30%,rgba(246,247,249,0.85)_44%,rgba(246,247,249,0)_60%)] max-md:bg-[linear-gradient(180deg,var(--color-paper)_0%,rgba(246,247,249,0.9)_60%,rgba(246,247,249,0.2)_100%)]"
-        />
+    <section id="kirish" data-stop aria-label="Kirish" className="raked relative grid min-h-[640px] lg:h-svh lg:grid-cols-2">
+      <div className="relative flex flex-col px-[clamp(1.25rem,4.5vw,4.5rem)] pt-20 pb-8 lg:pt-10">
+        <FleuronRule className="max-w-[30rem]" />
 
-        <div className="pointer-events-none relative flex h-full flex-col px-[clamp(1.25rem,5vw,5rem)] pt-20 pb-8 lg:pt-12">
-          <div className="my-auto flex items-stretch gap-[clamp(1.25rem,3vw,3rem)]">
-            {/* Bilingual lockup: the kanji hang like an inscription beside the title */}
-            <div className="hidden flex-col items-center gap-4 sm:flex">
-              <span className="jp text-[clamp(1.4rem,2vw,2rem)] leading-none tracking-[0.35em] text-ink [writing-mode:vertical-rl]">日本経済</span>
-              <span className="w-px flex-1 bg-feather" />
-              <Seal className="size-9" />
-            </div>
-
-            <div className="max-w-[40rem]">
-              <h1 className="text-[clamp(3.2rem,6.6vw,6rem)] leading-[0.98] font-[250] tracking-[-0.03em] text-depth" data-words="">
-                <span className="w" style={wordIndex(0)}>
-                  Yaponiya
-                </span>{" "}
-                <span className="w" style={wordIndex(1)}>
-                  iqtisodiyoti
-                </span>
-              </h1>
-              <p className="mt-7 max-w-[34ch] text-[clamp(1.1rem,1.5vw,1.4rem)] leading-relaxed text-dilute" data-rev style={delay(260)}>
-                Urushdan keyingi vayronadan robotlar davrigacha: resurssiz orol mamlakat qanday qilib dunyoning yetakchi iqtisodiyotlaridan biriga
-                aylandi.
-              </p>
-              <div className="pointer-events-auto mt-10 flex flex-wrap items-center gap-4" data-rev style={delay(420)}>
-                <button
-                  type="button"
-                  onClick={() => scrollToId("nippon")}
-                  className="group inline-flex h-14 items-center gap-4 rounded-full bg-depth bg-[length:180%_auto] bg-[position:0%_50%] pr-3 pl-7 text-paper transition-[background-position] duration-[1600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[position:100%_50%] active:scale-[0.98]"
-                  style={marble ? { backgroundImage: `url(${marble})` } : undefined}
-                >
-                  <span className="label !tracking-[0.16em]">Taqdimotni boshlash</span>
-                  <span className="grid size-9 place-items-center rounded-full border border-paper/25 transition-transform duration-500 group-hover:translate-y-0.5">
-                    <ArrowDown className="size-4" strokeWidth={1.6} />
-                  </span>
-                </button>
-                <a
-                  href="#manbalar"
-                  onClick={(e) => (e.preventDefault(), scrollToId("manbalar"))}
-                  className="inline-flex h-14 items-center rounded-full border border-feather px-7 text-depth transition-colors duration-300 hover:border-depth hover:bg-paper"
-                >
-                  <span className="label !tracking-[0.16em]">Manbalar</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-end justify-between gap-4 text-dilute" data-rev style={delay(600)}>
-            <p className="text-sm">
-              {PRESENTER.course} · 2026
-              {PRESENTER.name && <span className="text-depth"> · {PRESENTER.name}</span>}
-            </p>
+        <div className="my-auto py-10">
+          <h1 className="text-hedge-deep" data-words="">
+            <span className="engr block text-[clamp(3.4rem,7.4vw,6rem)] tracking-[0.04em]">
+              <span className="w" style={wordIndex(0)}>
+                Vatikan
+              </span>
+            </span>
+            <span className="engr mt-2 block text-[clamp(1.5rem,2.9vw,2.6rem)] tracking-[0.24em] text-hedge-mid">
+              <span className="w" style={wordIndex(2)}>
+                iqtisodiyoti
+              </span>
+            </span>
+          </h1>
+          <p className="mt-8 max-w-[34ch] text-[clamp(1.15rem,1.55vw,1.45rem)] leading-normal text-text" data-rev style={delay(260)}>
+            Soliqsiz, o‘z valyutasisiz va atigi 882 aholi bilan dunyodagi eng kichik davlat qanday yashaydi — va O‘zbekiston bilan qanday taqqoslanadi.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-5" data-rev style={delay(420)}>
+            <button
+              type="button"
+              onClick={() => scrollToId("davlat")}
+              className="group inline-flex h-14 items-center gap-4 bg-hedge pr-3 pl-7 text-spray outline-1 outline-offset-4 outline-hedge transition-[outline-offset,background-color] duration-500 hover:bg-hedge-mid hover:outline-offset-[7px] active:scale-[0.98]"
+            >
+              <span className="label tracking-[0.18em]">Taqdimotni boshlash</span>
+              <span className="grid size-9 place-items-center border border-gilt-light/50 text-gilt-light transition-transform duration-500 group-hover:translate-y-0.5">
+                <ArrowDown className="size-4" strokeWidth={1.6} />
+              </span>
+            </button>
+            <a
+              href="#manbalar"
+              onClick={(e) => (e.preventDefault(), scrollToId("manbalar"))}
+              className="inline-flex h-14 items-center border border-hedge/40 px-7 text-hedge-deep transition-colors duration-300 hover:border-hedge hover:bg-gravel-2"
+            >
+              <span className="label tracking-[0.18em]">Manbalar</span>
+            </a>
           </div>
         </div>
 
-        {/* Live readouts on a still right margin, like the basin's instrument rail */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-[19%] bg-[linear-gradient(270deg,var(--color-paper)_0%,var(--color-paper)_45%,rgba(246,247,249,0)_100%)] xl:block" />
-        <dl className="pointer-events-none absolute top-1/2 right-[clamp(1rem,2.5vw,2.5rem)] hidden -translate-y-1/2 flex-col gap-5 border-l border-mist pl-5 xl:flex">
-          {HERO_READOUTS.map((r) => (
-            <div key={r.label}>
-              <dt className="label text-dilute">{r.label}</dt>
-              <dd className="mt-1 text-lg text-depth">{r.value}</dd>
-              <dd className="note">{r.note}</dd>
-            </div>
-          ))}
-          <div>
-            <dt className="label text-dilute">Tomchilar</dt>
-            <dd className="tnum mt-1 text-lg text-depth">{drops}</dd>
-          </div>
-        </dl>
-      </InkBasin>
+        <div className="flex items-center gap-3 text-muted" data-rev style={delay(600)}>
+          <Keys className="size-8" />
+          <p className="text-sm">
+            {PRESENTER.course} · 2026
+            {PRESENTER.name && <span className="text-hedge-deep"> · {PRESENTER.name}</span>}
+          </p>
+        </div>
+      </div>
+
+      {/* The grand axis seen from the dome, with both fountains of the square awake */}
+      <div className="relative p-3 max-lg:h-[78svh] lg:py-6 lg:pr-6 lg:pl-0" data-words="">
+        <div className="frame relative h-full p-[9px]">
+          <FountainSquare
+            src="/images/aerial.jpg"
+            alt="Avliyo Pyotr maydoni gumbazdan: obelisk, ikki favvora va Konchiliatsiya ko‘chasining o‘qi"
+            className="h-full w-full"
+          />
+          <Corners />
+          <dl className="frame absolute top-6 right-6 hidden w-[16rem] bg-spray/95 p-5 sm:block" data-rev style={delay(700)}>
+            <dt className="engr text-[1.05rem] tracking-[0.12em] text-hedge-deep">Davlat pasporti</dt>
+            <FleuronRule className="mt-2 mb-1" />
+            {HERO_READOUTS.map((r) => (
+              <div key={r.label} className="flex items-baseline justify-between gap-3 border-b border-stone/60 py-2 last:border-0">
+                <dt className="text-sm text-muted">{r.label}</dt>
+                <dd className="text-right">
+                  <span className="text-lg font-medium text-hedge-deep">{r.value}</span>
+                  <span className="block text-[0.72rem] leading-tight text-muted">{r.note}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
     </section>
   )
 }

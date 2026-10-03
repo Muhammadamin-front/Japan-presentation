@@ -1,7 +1,7 @@
 /**
  * One scroll spine for the whole page (scroll-web.md: ONE rAF-throttled handler
  * writing CSS custom properties) plus Lenis smooth scrolling and GSAP
- * ScrollTrigger (parallax.md), plus presenter navigation between "stops".
+ * ScrollTrigger (parallax.md), plus hash sync and presenter navigation between "stops".
  */
 
 import Lenis from "lenis"
@@ -83,9 +83,22 @@ export function scrollToY(y: number, immediate = false) {
   else window.scrollTo({ top: y, behavior: immediate ? "auto" : "smooth" })
 }
 
-export function scrollToId(id: string) {
+/** Below the rail breakpoint a 48px bar sits over the page; slides are framed beneath it. */
+const barOffset = () => (window.innerWidth < 1024 ? 48 : 0)
+
+export function scrollToId(id: string, immediate = false) {
   const el = document.getElementById(id)
-  if (el) scrollToY(el.getBoundingClientRect().top + window.scrollY)
+  if (el) scrollToY(el.getBoundingClientRect().top + window.scrollY - barOffset(), immediate)
+}
+
+/** Every stop is addressable: the hash follows the presenter, so a refresh returns to the same section. */
+export function syncHash(id: string) {
+  if (location.hash.slice(1) !== id) history.replaceState(null, "", `#${id}`)
+}
+
+export function restoreHash() {
+  const id = decodeURIComponent(location.hash.slice(1))
+  if (id) requestAnimationFrame(() => scrollToId(id, true))
 }
 
 /**
@@ -101,7 +114,7 @@ export function collectStops(): number[] {
     if (list) {
       const span = el.offsetHeight - vh
       for (const v of list.split(",")) out.push(Math.round(top + parseFloat(v) * span))
-    } else out.push(Math.round(top))
+    } else out.push(Math.round(top - barOffset()))
   })
   return Array.from(new Set(out)).sort((a, b) => a - b)
 }

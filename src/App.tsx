@@ -1,17 +1,16 @@
 import { useEffect } from "react"
 import { Presenter } from "@/components/Presenter"
 import { Rail } from "@/components/Rail"
+import { Daromad } from "@/components/sections/Daromad"
+import { Davlat } from "@/components/sections/Davlat"
 import { Finale } from "@/components/sections/Finale"
-import { Future } from "@/components/sections/Future"
 import { Hero } from "@/components/sections/Hero"
 import { History } from "@/components/sections/History"
-import { Monozukuri } from "@/components/sections/Monozukuri"
-import { Nippon } from "@/components/sections/Nippon"
-import { Numbers } from "@/components/sections/Numbers"
-import { Problems } from "@/components/sections/Problems"
-import { Robots } from "@/components/sections/Robots"
-import { Stall } from "@/components/sections/Stall"
-import { startScroll } from "@/lib/scroll"
+import { Kelajak } from "@/components/sections/Kelajak"
+import { Muammolar } from "@/components/sections/Muammolar"
+import { Muzeylar } from "@/components/sections/Muzeylar"
+import { Taqqoslash } from "@/components/sections/Taqqoslash"
+import { restoreHash, startScroll } from "@/lib/scroll"
 
 /** One IntersectionObserver reveals every word group and atom once (scroll-web.md). */
 function useReveals() {
@@ -36,25 +35,28 @@ function useReveals() {
 }
 
 export default function App() {
-  useEffect(() => startScroll(), [])
+  useEffect(() => {
+    const stop = startScroll()
+    restoreHash()
+    return stop
+  }, [])
   useReveals()
 
   return (
     <>
-      <a href="#nippon" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-depth focus:px-4 focus:py-2 focus:text-paper">
+      <a href="#davlat" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-hedge focus:px-4 focus:py-2 focus:text-spray">
         Taqdimotga o‘tish
       </a>
       <Rail />
       <main className="pt-12 lg:pt-0 lg:pl-[var(--rail)]">
         <Hero />
-        <Nippon />
-        <Numbers />
+        <Davlat />
         <History />
-        <Stall />
-        <Monozukuri />
-        <Robots />
-        <Problems />
-        <Future />
+        <Daromad />
+        <Muzeylar />
+        <Muammolar />
+        <Taqqoslash />
+        <Kelajak />
         <Finale />
       </main>
       <Presenter />

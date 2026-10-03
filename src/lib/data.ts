@@ -1,379 +1,324 @@
 /* Barcha matn va raqamlar shu faylda. Taqdimotdan oldin shu yerda tahrirlang.
-   "~" belgisi — yaxlitlangan yoki taxminiy qiymat. */
+   "~" belgisi — yaxlitlangan yoki taxminiy qiymat. Valyuta: € — yevro, $ — AQSh dollari. */
 
 /** Ismingiz va guruhingizni yozing — bo‘sh qolsa, ko‘rsatilmaydi. */
 export const PRESENTER = {
-  name: "",
-  group: "",
+  name: "Odinaxon",
+  group: "Meliboyeva",
   course: "Iqtisodiyot fanidan taqdimot",
 }
 
-export type SectionId =
-  | "kirish"
-  | "nippon"
-  | "raqamlar"
-  | "tarix"
-  | "turgunlik"
-  | "monozukuri"
-  | "robotlar"
-  | "muammolar"
-  | "kelajak"
-  | "xulosa"
+export type SectionId = "kirish" | "davlat" | "tarix" | "daromad" | "muzeylar" | "muammolar" | "taqqoslash" | "kelajak" | "xulosa"
 
-export const SECTIONS: { id: SectionId; label: string; jp: string }[] = [
-  { id: "kirish", label: "Kirish", jp: "序" },
-  { id: "nippon", label: "Nippon", jp: "日本" },
-  { id: "raqamlar", label: "Raqamlarda", jp: "数" },
-  { id: "tarix", label: "Tarix", jp: "史" },
-  { id: "turgunlik", label: "Turg‘unlik", jp: "停" },
-  { id: "monozukuri", label: "Sanoat", jp: "工" },
-  { id: "robotlar", label: "Robotlar", jp: "ロボ" },
-  { id: "muammolar", label: "Muammolar", jp: "課題" },
-  { id: "kelajak", label: "Kelajak", jp: "未来" },
-  { id: "xulosa", label: "Xulosa", jp: "結" },
+export const SECTIONS: { id: SectionId; label: string; latin: string }[] = [
+  { id: "kirish", label: "Kirish", latin: "Introitus" },
+  { id: "davlat", label: "Davlat", latin: "Civitas" },
+  { id: "tarix", label: "Tarix", latin: "Historia" },
+  { id: "daromad", label: "Daromad", latin: "Aerarium" },
+  { id: "muzeylar", label: "Muzeylar", latin: "Musea" },
+  { id: "muammolar", label: "Muammolar", latin: "Difficultates" },
+  { id: "taqqoslash", label: "Taqqoslash", latin: "Comparatio" },
+  { id: "kelajak", label: "Kelajak", latin: "Futurum" },
+  { id: "xulosa", label: "Xulosa", latin: "Conclusio" },
 ]
 
 export const HERO_READOUTS = [
-  { label: "YaIM", value: "~4,2 trln $", note: "2025, XVF" },
-  { label: "Aholi", value: "~123 mln", note: "2025" },
-  { label: "65+ yoshdagilar", value: "29,6%", note: "2026, rekord" },
+  { label: "Maydoni", value: "0,49 km²", note: "dunyodagi eng kichik davlat" },
+  { label: "Aholisi", value: "882", note: "rezident, 2024-yil oxiri" },
+  { label: "Valyutasi", value: "Yevro", note: "Yevropa Ittifoqi bilan kelishuv" },
 ]
 
-export const NIPPON_FACTS = [
-  { value: "378 ming km²", label: "Maydoni — O‘zbekistondan biroz kichik" },
-  { value: "14 125", label: "Orollar soni (2023-yilgi qayta sanoq)" },
-  { value: "~13%", label: "Energiyani o‘zi ta’minlashi — qolgani import" },
-  { value: "¥ Yen", label: "Milliy valyuta · Poytaxt — Tokio" },
+export const STATE_FACTS = [
+  { value: "0,49 km²", label: "Maydoni — Toshkentning taxminan 1/890 qismi" },
+  { value: "882", label: "Doimiy aholi (2024-yil 31-dekabr); fuqarolar — 673" },
+  { value: "135", label: "Shveytsariya gvardiyasi — davlatning yagona «armiyasi» (2025)" },
+  { value: "1929", label: "Lateran shartnomasi: Italiya Vatikanni mustaqil davlat deb tan oldi" },
 ]
 
-/** GDP comparison drawn as flag drops (area ∝ value). XVF WEO, 2025-aprel, 2025 uchun baho. */
-export const GDP_DROPS = [
-  { country: "AQSh", code: "us", value: 30.5 },
-  { country: "Xitoy", code: "cn", value: 19.2 },
-  { country: "Germaniya", code: "de", value: 4.7 },
-  { country: "Hindiston", code: "in", value: 4.19 },
-  { country: "Yaponiya", code: "jp", value: 4.19, focus: true },
-  { country: "Buyuk Britaniya", code: "gb", value: 3.8 },
+export const TWO_VATICANS = [
+  {
+    name: "Muqaddas Taxt",
+    latin: "Sancta Sedes",
+    text: "Katolik cherkovining markaziy boshqaruvi. Xalqaro huquq subyekti: 180 dan ortiq davlat bilan diplomatik aloqada. Byudjetning asosiy qismi shu yerda.",
+    figure: "~1,23 mlrd €",
+    note: "operatsion daromad, 2024",
+  },
+  {
+    name: "Vatikan shahar-davlati",
+    latin: "Status Civitatis Vaticanae",
+    text: "0,49 km² hudud: muzeylar, pochta, bog‘lar, pochta markalari va tangalar. Uni Gubernatorlik boshqaradi; muzeylar daromadining katta qismi shu yerga tushadi.",
+    figure: "~100 mln €",
+    note: "muzeylar yillik tushumi, taxmin",
+  },
 ]
 
-export const KEY_FIGURES = [
-  {
-    value: 34,
-    prefix: "~",
-    suffix: " ming $",
-    label: "Aholi jon boshiga YaIM",
-    note: "XVF, 2025",
-  },
-  {
-    value: 2.5,
-    prefix: "~",
-    suffix: "%",
-    decimals: 1,
-    label: "Ishsizlik darajasi — dunyodagi eng pastlardan",
-    note: "Statistika byurosi, 2025",
-  },
-  {
-    value: 230,
-    prefix: "~",
-    suffix: "%",
-    label: "Davlat qarzi / YaIM — rivojlangan davlatlar ichida eng yuqori",
-    note: "XVF WEO, 2025-oktabr",
-  },
-  {
-    value: 110.4,
-    prefix: "¥",
-    suffix: " trln",
-    decimals: 1,
-    label: "Eksport — 1979-yildan beri eng yuqori (rekord)",
-    note: "Moliya vazirligi, 2025",
-  },
-  {
-    value: 42.7,
-    suffix: " mln",
-    decimals: 1,
-    label: "Xorijiy sayyohlar — rekord, ¥9,5 trln sarfladi",
-    note: "JNTO, 2025",
-  },
-  {
-    value: 70,
-    prefix: "~",
-    suffix: "%",
-    label: "Xizmatlar sohasining YaIMdagi ulushi (sanoat ~29%, qishloq xo‘jaligi ~1%)",
-    note: "Jahon banki",
-  },
-]
+export const PAPACY = {
+  name: "Leo XIV",
+  text: "2025-yil 8-mayda saylangan Papa — davlat boshlig‘i va mutlaq saylov monarxi: qonun chiqaruvchi, ijro va sud hokimiyati bir qo‘lda.",
+}
 
 export const LADDER = [
   {
-    year: "1945",
-    title: "Vayronadan boshlanish",
-    text: "Urush shaharlar va zavodlarni vayron qildi. AQSh ishg‘oli davrida yer islohoti o‘tkazildi, yirik oilaviy konsernlar (dzaybatsu) tarqatildi.",
+    year: "756",
+    title: "Papa davlatlari",
+    text: "Frank qiroli Pipin Markaziy Italiyadagi yerlarni Papaga topshirdi. 1100 yil davomida Papa katta hududdan soliq yig‘gan dunyoviy hukmdor bo‘ldi.",
   },
   {
-    year: "1964",
-    title: "Shinkansen va Olimpiada",
-    text: "Tezyurar Tokaido Shinkansen ochildi, Tokio Olimpiadasi o‘tdi, Yaponiya OECDga kirdi. 1955–1973: yiliga ~9% o‘sish — «yapon mo‘jizasi».",
+    year: "1870",
+    title: "Hududsiz qolish",
+    text: "Italiya qo‘shini Rimni egalladi, Papa davlatlari tugadi. 59 yil davomida Papa o‘zini «Vatikan asiri» deb atadi — soliq tushumi yo‘qoldi.",
   },
   {
-    year: "1968",
-    title: "Dunyoda ikkinchi",
-    text: "Yaponiya G‘arbiy Germaniyani ortda qoldirib, kapitalistik dunyoning 2-yirik iqtisodiyotiga aylandi va bu o‘rinni 2010-yilgacha saqladi.",
+    year: "1929",
+    title: "Lateran shartnomasi",
+    text: "Mussolini hukumati Vatikanni mustaqil davlat deb tan oldi va tovon to‘ladi: 750 mln lira naqd va 1 mlrd lira davlat obligatsiyasi. Bu pul — bugungi APSA mulkining asosi.",
   },
   {
-    year: "1989",
-    title: "Pufak cho‘qqisi",
-    text: "Nikkei indeksi 38 916 punktga chiqdi, yer narxlari osmonga ko‘tarildi. 1985-yilgi Plaza kelishuvidan so‘ng arzon kredit «pufak»ni shishirdi.",
+    year: "1942",
+    title: "Vatikan banki — IOR",
+    text: "«Diniy ishlar instituti» (IOR) tashkil etildi: cherkov tashkilotlari, ruhoniylar va xodimlarning pulini saqlaydi va boshqaradi.",
   },
   {
-    year: "2013",
-    title: "Abenomika",
-    text: "Bosh vazir Abe Shinzo «uch o‘q» siyosatini boshladi: pul-kredit yumshatish, davlat xarajatlari va tarkibiy islohotlar. Maqsad — deflyatsiyadan chiqish.",
+    year: "1982",
+    title: "Banco Ambrosiano",
+    text: "IOR bilan bog‘liq Italiya banki ~1,3 mlrd $ teshik bilan qulab tushdi. 1984-yilda IOR javobgarlikni tan olmay, kreditorlarga 224 mln $ to‘ladi.",
   },
   {
-    year: "2024",
-    title: "Uyg‘onish",
-    text: "Nikkei 34 yildan so‘ng 1989-yil cho‘qqisini yangiladi, Yaponiya Banki manfiy foizni bekor qildi. 2026: Nikkei 70 000 dan oshdi.",
+    year: "2002",
+    title: "Yevro",
+    text: "Vatikan lirasi o‘rniga yevro keldi. 2009-yilgi Yevropa Ittifoqi bilan valyuta kelishuvi tangalar chiqarish chegarasini belgilaydi.",
+  },
+  {
+    year: "2014",
+    title: "Moliyaviy islohot",
+    text: "Papa Fransisk Iqtisodiyot kotibiyati va Iqtisodiyot kengashini tuzdi: xalqaro buxgalteriya standartlari, audit, ochiq hisobotlar.",
+  },
+  {
+    year: "2025",
+    title: "Yubiley va yangi Papa",
+    text: "Muqaddas yil: Rimga 33,5 mln ziyoratchi keldi. 21-aprelda Papa Fransisk vafot etdi, 8-mayda Leo XIV saylandi.",
   },
 ]
 
-/** Real YaIM o‘rtacha yillik o‘sishi, %. Kabinet idorasi (Naikakufu). */
-export const ERAS = [
-  { period: "1956–1973", name: "Yuqori o‘sish davri", value: 9.1 },
-  { period: "1974–1990", name: "Barqaror o‘sish davri", value: 4.2 },
-  { period: "1991–2024", name: "Past o‘sish davri", value: 0.8, approx: true },
-]
+/** Muqaddas Taxt konsolidatsiyalangan hisoboti, 2024 (Iqtisodiyot kotibiyati, 2025-noyabr). */
+export const BUDGET_2024 = {
+  income: 1.23,
+  expense: 1.275,
+  result: 1.6,
+  /** Shifoxonalarsiz daromad, mln € */
+  core: 546.5,
+  split: [
+    { label: "Xayriyalar", value: 43, note: "yeparxiyalar, dindorlar, jamg‘armalar" },
+    { label: "O‘z daromadi", value: 40, note: "ko‘chmas mulk, nashriyot, xizmatlar" },
+    { label: "Moliyaviy va boshqa", value: 17, note: "investitsiyalar va boshqalar" },
+  ],
+}
 
-export const LOST = [
+/** Pul qayerdan keladi — to‘rt «favvora». */
+export const SOURCES_OF_MONEY = [
   {
-    title: "Pufak yorildi",
-    period: "1990–1992",
-    text: "Aksiya va yer narxlari qulab tushdi: Nikkei ikki yil ichida 60% dan ko‘proq arzonladi.",
+    name: "Vatikan muzeylari",
+    latin: "Musea Vaticana",
+    figure: "~100 mln €",
+    meaning: "yiliga chipta va suvenirlardan",
+    text: "6,8 mln tashrif (2024). Muzeylar o‘z pulini o‘zida saqlamaydi: tushum butun shahar-davlat xarajatini qoplaydi — bu Gubernatorlik daromadining qariyb yarmi.",
   },
   {
-    title: "Yomon qarzlar",
-    period: "1990-yillar",
-    text: "Banklar qaytmaydigan kreditlarga botdi, «zombi» kompaniyalar sun’iy tirik saqlandi. 1997-yilda Yamaichi Securities bankrot bo‘ldi.",
+    name: "Avliyo Pyotr ulushi",
+    latin: "Obolus Sancti Petri",
+    figure: "57,6 mln €",
+    meaning: "2025-yildagi tushum",
+    text: "Butun dunyo dindorlarining yillik xayriyasi. Eng ko‘p — AQShdan (14,2 mln €), keyin Italiya va Braziliya. 2025-yilda xarajat 59,8 mln € bo‘ldi.",
   },
   {
-    title: "Deflyatsiya",
-    period: "1998–2012",
-    text: "Narxlar o‘smadi, aksincha tushdi. Odamlar xaridni kechiktirdi, kompaniyalar ish haqini oshirmadi — iqtisodiyot joyida qotdi.",
-  },
-]
-
-export const ARROWS = [
-  {
-    n: "一",
-    title: "Pul-kredit siyosati",
-    text: "Yaponiya Banki pul massasini keskin oshirdi (2013), 2016-yildan manfiy foiz stavkasi.",
+    name: "Vatikan banki (IOR)",
+    latin: "Institutum pro Operibus Religionis",
+    figure: "51 mln €",
+    meaning: "sof foyda, 2025",
+    text: "Mijozlar aktivi 5,9 mlrd €. Foyda 2024-yilga nisbatan 55,5% o‘sdi; Papaga 24,3 mln € dividend ajratildi.",
   },
   {
-    n: "二",
-    title: "Moliyaviy rag‘bat",
-    text: "Davlat investitsiyalari va infratuzilma dasturlari talabni qo‘llab-quvvatladi.",
-  },
-  {
-    n: "三",
-    title: "Tarkibiy islohotlar",
-    text: "Ayollar bandligi, CPTPP savdo kelishuvi, korporativ boshqaruv qoidalari.",
-  },
-]
-
-export const SECTORS = [
-  {
-    name: "Avtomobilsozlik",
-    jp: "自動車",
-    text: "Toyota 2020-yildan beri dunyoda eng ko‘p avtomobil sotadigan kompaniya. Avtomobillar — Yaponiya eksportining eng yirik moddasi.",
-    makers: "Toyota · Honda · Nissan · Suzuki · Mazda",
-  },
-  {
-    name: "Yarimo‘tkazgich materiallari",
-    jp: "半導体",
-    text: "Dunyo kremniy plastinalarining katta qismi yapon kompaniyalarida. TSMC Kumamoto zavodi 2024-yilda ochildi, Rapidus 2 nm chip ustida ishlamoqda.",
-    makers: "Shin-Etsu · SUMCO · Tokyo Electron",
-  },
-  {
-    name: "Robototexnika",
-    jp: "ロボット",
-    text: "Dunyodagi sanoat robotlarining 38% i Yaponiyada ishlab chiqariladi — mamlakat bu sohada birinchi.",
-    makers: "FANUC · Yaskawa · Kawasaki · Nachi · Epson",
-  },
-  {
-    name: "Elektronika va kontent",
-    jp: "電子",
-    text: "Kamera sensorlari, o‘yin konsollari, anime va o‘yinlar — butun dunyoga sotiladigan madaniy eksport.",
-    makers: "Sony · Nintendo · Panasonic · Canon",
+    name: "APSA — mulk boshqaruvi",
+    latin: "Patrimonium Sedis Apostolicae",
+    figure: "62,2 mln €",
+    meaning: "sof foyda, 2024",
+    text: "5 000 dan ortiq ko‘chmas mulk birligi (Italiyada 4 234 ta). Ijaradan 35,1 mln € natija; Muqaddas Taxt kamomadiga 46,1 mln € qo‘shdi.",
   },
 ]
 
-export const FLASHCARDS = [
+export const NO_TAX = [
   {
-    kanji: "改善",
-    romaji: "Kaizen",
-    meaning: "Doimiy takomillashtirish",
-    text: "Har bir ishchi har kuni kichik yaxshilanish taklif qiladi. Toyota ishlab chiqarish tizimining asosi.",
+    title: "Soliq yo‘q",
+    text: "Vatikan xodimlari va fuqarolari daromad solig‘i to‘lamaydi. Davlat byudjeti soliq emas, xayriya va mulk daromadiga tayanadi.",
   },
   {
-    kanji: "看板",
-    romaji: "Kanban · JIT",
-    meaning: "Aynan o‘z vaqtida",
-    text: "Detal faqat kerak bo‘lganda keltiriladi. Ombor xarajati kamayadi, isrof yo‘qoladi.",
+    title: "O‘z valyutasi yo‘q",
+    text: "Pul-kredit siyosati yo‘q, markaziy bank yo‘q — Vatikan yevrodan foydalanadi va Yevropa Ittifoqi ruxsat bergan miqdorda yevro tangalar zarb qiladi.",
   },
   {
-    kanji: "系列",
-    romaji: "Keiretsu",
-    meaning: "Kompaniyalar zanjiri",
-    text: "Bank, zavod va yetkazib beruvchilar bir-birining aksiyasiga egalik qilib, uzoq yillar hamkorlik qiladi.",
-  },
-  {
-    kanji: "終身雇用",
-    romaji: "Shūshin koyō",
-    meaning: "Umrbod ish",
-    text: "Xodim bir kompaniyada nafaqagacha ishlaydi: sadoqat va malaka oshadi, lekin mehnat bozori sekin o‘zgaradi.",
+    title: "Kollektsiya bozori",
+    text: "Vatikan yevro tangalari va pochta markalari asosan kolleksionerlarga nominaldan qimmatroq sotiladi — kichik, ammo barqaror daromad.",
   },
 ]
 
-export const MAKERS = [
-  ["トヨタ", "Toyota"],
-  ["ソニー", "Sony"],
-  ["任天堂", "Nintendo"],
-  ["ホンダ", "Honda"],
-  ["日立", "Hitachi"],
-  ["ファナック", "FANUC"],
-  ["安川電機", "Yaskawa"],
-  ["キーエンス", "Keyence"],
-  ["東京エレクトロン", "Tokyo Electron"],
-  ["信越化学", "Shin-Etsu"],
-  ["パナソニック", "Panasonic"],
-  ["三菱", "Mitsubishi"],
-  ["キヤノン", "Canon"],
-  ["デンソー", "Denso"],
-  ["ユニクロ", "Uniqlo"],
-  ["ソフトバンク", "SoftBank"],
-]
-
-/** IFR World Robotics 2025 (2024 yil ma’lumotlari). */
-export const ROBOT_STATS = [
-  { value: 38, suffix: "%", label: "Dunyo sanoat robotlari ishlab chiqarishidagi ulushi", note: "2024 · 1-o‘rin" },
-  { value: 44500, label: "2024-yilda o‘rnatilgan yangi robotlar", note: "dunyoda 2-bozor" },
-  { value: 450500, label: "Hozir ishlab turgan sanoat robotlari", note: "2024" },
-  { value: 446, label: "Har 10 000 ishchiga to‘g‘ri keladigan robot", note: "dunyoda 4-o‘rin" },
-]
-
-export const ROBOT_TIMELINE = [
-  { year: "1969", name: "Kawasaki-Unimate 2000", text: "Yaponiyaning birinchi sanoat roboti" },
-  { year: "1973", name: "WABOT-1", text: "Vaseda universiteti: dunyodagi ilk to‘liq o‘lchamli insonsimon robot" },
-  { year: "1980", name: "«Robot yili»", text: "Robotlar zavodlarga ommaviy kirib keldi" },
-  { year: "2000", name: "ASIMO", text: "Honda: yuradigan va zinadan chiqadigan robot" },
-  { year: "2014", name: "Pepper", text: "SoftBank: odam kayfiyatini taniydigan xizmat roboti" },
-  { year: "2020+", name: "Parvarish robotlari", text: "Qariyalar uylari, omborlar va restoranlarda" },
-]
-
-export const ROBOT_CHAIN = [
-  { title: "Aholi qariydi", figure: "29,6%", note: "aholi 65 yoshdan katta (2026)" },
-  { title: "Ishchi qo‘l kamayadi", figure: "~11 mln", note: "ishchi 2040-yilgacha yetishmaydi" },
-  { title: "Robot joriy etiladi", figure: "446", note: "robot har 10 000 ishchiga" },
-  { title: "Unumdorlik o‘sadi", figure: "1 531", note: "robot / 10 000 — avtosanoatda (2023)" },
-  { title: "Eksport va o‘sish", figure: "38%", note: "dunyo robotlari Yaponiyadan" },
-]
-
-export const ROBOT_WHY = [
+export const MUSEUM_ITEMS = [
   {
-    title: "Mehnat taqchilligini yopadi",
-    text: "Qurilish, logistika, parvarish — ishchi topilmaydigan sohalarda robot ishni to‘xtatmaydi.",
+    img: "/images/sistine.jpg",
+    title: "Sikstin kapellasi",
+    sub: "Mikelanjelo, 1508–1512",
+    desc: "Muzeylar marshrutining yakuni: har bir tashrifchi chiptasi aynan shu shiftga olib boradi.",
   },
   {
-    title: "O‘zi eksport tarmog‘i",
-    text: "Yapon robotlarining to‘rtdan uch qismidan ko‘prog‘i chet elga sotiladi — valyuta tushumi manbai.",
+    img: "/images/athens.jpg",
+    title: "Afina maktabi",
+    sub: "Rafael, 1509–1511",
+    desc: "Rafael xonalari — muzeylarning eng ko‘p suratga olinadigan qismlaridan biri.",
   },
   {
-    title: "Sifat va raqobatbardoshlik",
-    text: "Avtosanoatda har 10 000 ishchiga 1 531 robot: xato kam, tannarx past, sifat yuqori.",
+    img: "/images/laocoon.jpg",
+    title: "Laokoon",
+    sub: "Pio-Klementino muzeyi",
+    desc: "1506-yilda topilgan antik haykal — Vatikan muzeylari kolleksiyasining boshlanishi.",
   },
   {
-    title: "Qariyalar parvarishi",
-    text: "Hukumat parvarish robotlarini subsidiyalaydi: PARO terapevtik roboti, HAL ekzoskeleti.",
+    img: "/images/maps.jpg",
+    title: "Xaritalar galereyasi",
+    sub: "Ignatsio Danti, 1580–1585",
+    desc: "120 metrlik yo‘lak: 40 ta freska-xarita. Har kuni o‘n minglab odam shu yerdan o‘tadi.",
+  },
+  {
+    img: "/images/basilica-blue.jpg",
+    title: "Avliyo Pyotr sobori",
+    sub: "Kirish bepul",
+    desc: "Soborga kirish bepul — daromad xayriya, gumbazga chiqish va muzeylar orqali keladi.",
+  },
+  {
+    img: "/images/guard.jpg",
+    title: "Shveytsariya gvardiyasi",
+    sub: "1506-yildan beri",
+    desc: "135 kishilik qo‘riqchi — xavfsizlik ham turizm brendining bir qismi.",
   },
 ]
 
-/** 65 va undan katta yoshdagilar ulushi, %. Statistika byurosi; 2040/2070 — IPSS prognozi (2023). */
-export const AGING = [
-  { year: 1950, value: 4.9 },
-  { year: 1970, value: 7.1 },
-  { year: 1990, value: 12.1 },
-  { year: 2010, value: 23.0 },
-  { year: 2026, value: 29.6 },
-  { year: 2040, value: 34.8, projected: true },
-  { year: 2070, value: 38.7, projected: true },
-]
-
-/** Davlat yalpi qarzi, YaIMga nisbatan %. XVF WEO 2025-oktabr, 2025 bahosi (yaxlitlangan). */
-export const DEBT = [
-  { country: "Yaponiya", code: "jp", value: 230, focus: true },
-  { country: "Italiya", code: "it", value: 137 },
-  { country: "AQSh", code: "us", value: 125 },
-  { country: "Fransiya", code: "fr", value: 116 },
-  { country: "Buyuk Britaniya", code: "gb", value: 103 },
-  { country: "Germaniya", code: "de", value: 64 },
+/** Muqaddas Taxt yakuniy natijasi va operatsion kamomadi, mln €. */
+export const DEFICITS = [
+  { year: "2023", operating: -83, result: -51.2 },
+  { year: "2024", operating: -44, result: 1.6 },
 ]
 
 export const PROBLEMS = [
   {
-    figure: "686 ming",
-    title: "Tug‘ilish rekord darajada kam",
-    text: "2024-yilda tug‘ilganlar tarixda ilk bor 700 mingdan kam bo‘ldi. Aholi 2008-yildagi 128 mln cho‘qqidan beri kamaymoqda.",
+    figure: "≥139 mln €",
+    date: "2019–2026",
+    title: "London binosi janjali",
+    text: "Davlat kotibiyati Londondagi Sloane Avenue binosiga ~350 mln € tikdi va zarar bilan sotdi. 2023-yilda kardinal Bechchu 5,5 yilga hukm qilindi; apellyatsiya 2026-yilda davom etmoqda.",
   },
   {
-    figure: "~162 ¥",
-    title: "Zaif yen",
-    text: "2024-yil iyulda 1 dollar ~162 yen turdi — 1986-yildan beri eng zaif. Energiya va oziq-ovqat importi qimmatladi.",
+    figure: "~631 mln €",
+    date: "2022 · 2024",
+    title: "Pensiya jamg‘armasi",
+    text: "2022-yildagi baho bo‘yicha kelajakdagi pensiya majburiyatlari yetishmovchiligi. 2024-yil noyabrida Papa Fransisk «jiddiy nomutanosiblik» haqida ogohlantirdi.",
+  },
+  {
+    figure: "−2,2 mln €",
+    date: "2025",
+    title: "Xayriyalar kamaymoqda",
+    text: "Avliyo Pyotr ulushi 2025-yilda ham xarajatni to‘liq qoplamadi; 2010-yillar boshidagi tushumlardan ancha past.",
+  },
+]
+
+/** Taqqoslash bo‘limi. */
+export const SCALE_STOPS = [
+  {
+    title: "O‘zbekiston",
+    text: "448 969 km² — Vatikandan ~916 ming marta katta.",
+  },
+  {
+    title: "Toshkent",
+    text: "435 km² — doira shahar maydoniga teng. Vatikan Toshkentga ~890 marta sig‘adi.",
+  },
+  {
+    title: "Vatikan",
+    text: "0,49 km² — xuddi shu masshtabda, Toshkent markaziga qo‘yilgan. Uni piyoda 40 daqiqada aylanib chiqish mumkin.",
+  },
+]
+
+export type CompareRow = { topic: string; va: string; uz: string; ratio?: string }
+
+export const COMPARE: CompareRow[] = [
+  { topic: "Maydoni", va: "0,49 km²", uz: "448 969 km²", ratio: "×916 000" },
+  { topic: "Aholisi", va: "882", uz: "~39 mln", ratio: "×44 000" },
+  { topic: "Iqtisodiyot hajmi", va: "YaIM hisoblanmaydi", uz: "YaIM ~147 mlrd $ (2025)" },
+  { topic: "Byudjet daromadi", va: "~1,23 mlrd € (2024)", uz: "~41,3 mlrd $ (2025)", ratio: "×~30" },
+  { topic: "Asosiy daromad", va: "Xayriya va mulk", uz: "Soliqlar (QQS, foyda solig‘i)" },
+  { topic: "Valyuta", va: "Yevro, markaziy bank yo‘q", uz: "So‘m, Markaziy bank" },
+  { topic: "Daromad solig‘i", va: "Yo‘q", uz: "12%" },
+  { topic: "Iqtisodiy o‘sish", va: "O‘lchanmaydi", uz: "7,7% (2025)" },
+  { topic: "Sayyohlar", va: "6,8 mln (muzeylar, 2024)", uz: "11,7 mln xorijiy (2025)" },
+  { topic: "YuNESKO merosi", va: "Butun davlat — 1 obyekt", uz: "8 obyekt (2026)" },
+  { topic: "Davlatchilik", va: "1929 · saylov monarxiyasi", uz: "1991 · prezidentlik respublikasi" },
+]
+
+export const COMPARE_LESSONS = [
+  {
+    title: "Meros — daromad manbai",
+    text: "6,8 mln muzey tashrifi ~100 mln € beradi. Samarqand, Buxoro, Xiva va endi Toshkent modernizmi uchun yagona chipta, bron va narx siyosati shu darajadagi tushum keltirishi mumkin.",
+  },
+  {
+    title: "Shaffoflik ishonch yaratadi",
+    text: "Vatikan 2014-yildan keyin ochiq hisobot berishni boshladi va 2024-yilda kamomaddan chiqdi. Ochiq byudjet — investor va donor ishonchi.",
+  },
+  {
+    title: "Masshtab emas, model muhim",
+    text: "O‘zbekiston — ishlab chiqaruvchi, o‘sayotgan iqtisodiyot; Vatikan — xayriya va mulk bilan yashovchi institut. Ularni bir xil o‘lchov bilan baholab bo‘lmaydi.",
   },
 ]
 
 export const FUTURE = [
   {
-    tag: "Jamiyat 5.0",
-    title: "Jamiyat 5.0: inson markazli aqlli jamiyat",
-    text: "Sun’iy intellekt, IoT va robotlar kundalik hayotga — hukumatning uzoq muddatli strategiyasi.",
+    title: "«Fratello Sole» quyosh-agro stansiyasi",
+    text: "Santa Mariya di Galeriyada 80–90 MVt quvvatli agrivoltaik stansiya, ~100 mln € loyiha: Italiya bilan kelishuv 2026-yil 28-mayda kuchga kirdi. Maqsad — Vatikanni to‘liq energiya bilan ta’minlash.",
   },
   {
-    tag: "Chiplar",
-    title: "Yarimo‘tkazgichlarning qaytishi",
-    text: "TSMC Kumamoto zavodi (2024) va Rapidus: Hokkaidoda 2 nm chiplar, ommaviy ishlab chiqarish rejasi — 2027.",
+    title: "Pensiya islohoti",
+    text: "Kardinal Farrell jamg‘armaning yagona boshqaruvchisi etib tayinlandi: majburiyatlarni qayta hisoblash va tizimni barqarorlashtirish.",
   },
   {
-    tag: "Turizm",
-    title: "Turizm: 42,7 mln mehmon",
-    text: "2025-yilda sayyohlar ¥9,5 trln sarfladi — turizm avtomobildan keyingi eng yirik «eksport»lardan biriga aylandi.",
+    title: "Leo XIV va moliya",
+    text: "Yangi Papa davrida IOR rekord foyda berdi; xarajatlarni qisqartirish va xayriyalarni ochiq hisob bilan jalb qilish davom etmoqda.",
   },
   {
-    tag: "GX",
-    title: "GX — yashil transformatsiya",
-    text: "10 yil ichida ¥150 trln davlat va xususiy investitsiya — vodorod, atom, qayta tiklanuvchi energiya.",
-  },
-  {
-    tag: "Foiz",
-    title: "Deflyatsiya ortda qoldi",
-    text: "Narxlar va ish haqi o‘smoqda; 2026-yilda Yaponiya Banki stavkasi 1995-yildan beri eng yuqori darajaga chiqdi.",
+    title: "Turizm — asosiy tayanch",
+    text: "Yubiley tugadi, ammo muzeylar va ziyorat turizmi daromadning eng barqaror manbai bo‘lib qoladi.",
   },
 ]
 
 export const CONCLUSIONS = [
-  "Tabiiy resursi kam mamlakat bilim, intizom va texnologiya hisobiga dunyoning yetakchi iqtisodiyotlaridan biriga aylandi.",
-  "1991-yildan keyingi turg‘unlik — aktiv pufagi va deflyatsiya qanchalik xavfli ekanini ko‘rsatgan saboq.",
-  "Qariyotgan jamiyatda robotlar — o‘yinchoq emas, balki o‘sishni saqlab qolishning iqtisodiy zarurati.",
+  "Vatikan — oddiy davlat iqtisodiyoti emas: soliq, sanoat va o‘z valyutasi yo‘q; u xayriya, mulk va madaniy meros daromadi bilan yashovchi global institut.",
+  "Moliyaviy janjallar va kamomadlar islohotga majbur qildi: 2024-yilda Muqaddas Taxt yillar davomidagi kamomaddan so‘ng ilk bor profitsit bilan yopildi.",
+  "O‘zbekiston bilan taqqoslash ko‘rsatadiki, iqtisodiy kuch hudud va aholiga emas, daromad modeli va boshqaruv sifatiga bog‘liq.",
 ]
 
 export const SOURCES = [
-  "XVF (IMF) — World Economic Outlook, 2025-aprel va 2025-oktabr",
-  "IFR — World Robotics 2025 (Industrial Robots)",
-  "JARA — Yaponiya Robot Assotsiatsiyasi, 2025 choraklik statistikasi",
-  "Yaponiya Ichki ishlar va aloqa vazirligi / Statistika byurosi, 2026-sentabr",
-  "IPSS — Yaponiya aholisi prognozi, 2023",
-  "Kabinet idorasi (Naikakufu) — milliy hisoblar",
-  "Moliya vazirligi — savdo statistikasi, 2025",
-  "JNTO — xorijiy mehmonlar statistikasi, 2025",
-  "Fuji surati — Unsplash (Unsplash litsenziyasi); bayroqlar — circle-flags (MIT)",
-  "Recruit Works Institute — «Future Predictions 2040», 2023",
-  "Yaponiya Banki; Nikkei",
+  "Muqaddas Taxt Iqtisodiyot kotibiyati — 2024-yil konsolidatsiyalangan moliyaviy hisoboti (2025-noyabr)",
+  "APSA — 2024-yil moliyaviy hisoboti (2025-iyul)",
+  "IOR (Vatikan banki) — 2024 va 2025-yil yillik hisobotlari",
+  "Avliyo Pyotr ulushi — 2024 va 2025-yil hisobotlari",
+  "Vatican State — population (vaticanstate.va), 2024-yil 31-dekabr",
+  "The Art Newspaper — muzeylar tashrifi reytingi, 2025; Vatikan muzeylari",
+  "Yangi evangelizatsiya dikasteriyasi — Yubiley 2025 yakunlari",
+  "Yevropa Ittifoqi — Vatikan bilan valyuta kelishuvi (2009)",
+  "O‘zbekiston Milliy statistika qo‘mitasi — YaIM 2025, aholi 2026",
+  "O‘zbekiston Iqtisodiyot va moliya vazirligi — 2025-yil byudjet ijrosi",
+  "Turizm qo‘mitasi — 2025-yil xorijiy sayyohlar; YuNESKO Butunjahon meros markazi",
+  "Xaritalar: Natural Earth (ochiq), OpenStreetMap (© OSM hissadorlari, ODbL)",
+]
+
+/** Suratlar — Wikimedia Commons; har biri o‘z litsenziyasi bilan. */
+export const PHOTO_CREDITS = [
+  "Vatikan havodan — Helloworld314, CC BY-SA 4.0",
+  "Gumbaz va bog‘lar, Sobor, Gvardiya — Jebulon, CC0",
+  "Sikstin shifti (surat) — CC BY-SA 3.0; Afina maktabi — jamoat mulki",
+  "Laokoon — Wilfredor, CC0; Xaritalar galereyasi — Alvesgaspar, CC BY-SA 4.0",
+  "Kechki Vatikan — lafiguradelpadre, CC BY 2.0",
 ]

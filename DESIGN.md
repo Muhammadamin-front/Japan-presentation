@@ -1,206 +1,291 @@
 ---
-name: Yaponiya iqtisodiyoti
-description: A speaker-led scroll presentation on Japan's economy, rendered as a basin of suminagashi ink.
+name: Vatikan iqtisodiyoti
+description: A speaker-led scroll presentation on the Vatican's economy, walked as the axial plan of the Vatican Gardens.
 colors:
-  paper-water: "#f6f7f9"
-  wash: "#eceff3"
-  mist: "#dde2e8"
-  feathered-gray: "#aeb6c2"
-  dilute-ink: "#606d80"
-  ink-current: "#1e2d4a"
-  indigo-depth: "#0a1a33"
-  sumi-pool: "#060a12"
-  shu-seal: "#c23b22"
+  gravel: "#e8ddc6"
+  gravel-2: "#ddd0b3"
+  stone: "#c7b994"
+  spray: "#f6f5ef"
+  statuary: "#8c8f8a"
+  text: "#2b3a2f"
+  muted: "#555d4b"
+  hedge: "#1f3b2a"
+  hedge-mid: "#2c5039"
+  hedge-deep: "#13261a"
+  leaf: "#9fb28f"
+  gilt: "#a9853a"
+  gilt-light: "#d2b46c"
+  porphyry: "#8e2f25"
+  water: "#6f8f8a"
 typography:
   display:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(3.2rem, 6.6vw, 6rem)"
-    fontWeight: 250
-    lineHeight: 0.98
-    letterSpacing: "-0.03em"
-  headline:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.6rem, 5.2vw, 5.4rem)"
-    fontWeight: 250
+    fontFamily: "Castoro Titling, Times New Roman, serif"
+    fontSize: "clamp(3.4rem, 7.4vw, 6rem)"
+    fontWeight: 400
     lineHeight: 1.02
-    letterSpacing: "-0.025em"
+    letterSpacing: "0.04em"
+  headline:
+    fontFamily: "Castoro Titling, Times New Roman, serif"
+    fontSize: "clamp(1.8rem, 4.6vw, 4.6rem)"
+    fontWeight: 400
+    lineHeight: 1.04
+    letterSpacing: "0.04em"
   title:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.45rem, 2.4vw, 2rem)"
-    fontWeight: 300
-    lineHeight: 1.2
-  body:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "18px"
-    fontWeight: 350
-    lineHeight: 1.55
+    fontFamily: "Castoro Titling, Times New Roman, serif"
+    fontSize: "1.35rem"
+    fontWeight: 400
+    lineHeight: 1.02
+    letterSpacing: "0.06em"
+  figure:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.2rem, 3.6vw, 3.4rem)"
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: "-0.01em"
+    fontFeature: "\"lnum\" 1"
   lede:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.05rem, 1.35vw, 1.3rem)"
-    fontWeight: 350
-    lineHeight: 1.6
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.1rem, 1.4vw, 1.35rem)"
+    fontWeight: 400
+    lineHeight: 1.55
+  body:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "19px"
+    fontWeight: 400
+    lineHeight: 1.5
+    fontFeature: "\"lnum\" 1"
+  latin:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.92rem"
+    fontWeight: 400
+    letterSpacing: "0.01em"
   label:
-    fontFamily: "Commissioner, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.72rem"
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.74rem"
     fontWeight: 500
-    letterSpacing: "0.18em"
-  inscription:
-    fontFamily: "Shippori Mincho B1, Hiragino Mincho ProN, Yu Mincho, serif"
-    fontSize: "clamp(1.1rem, 1.6vw, 1.5rem)"
-    fontWeight: 500
-    letterSpacing: "0.3em"
+    letterSpacing: "0.2em"
+  note:
+    fontFamily: "Alegreya Sans, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.82rem"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "0.01em"
 rounded:
-  control: "999px"
-  card: "16px"
-  tooltip: "8px"
+  none: "0px"
+  basin: "9999px"
 spacing:
   gutter: "clamp(1.25rem, 4vw, 4.5rem)"
-  slide-pad: "80px"
-  container: "1320px"
-  rail: "232px"
+  container: "1340px"
+  rail: "220px"
+  bar: "3rem"
+  slide-pad: "5rem"
+  frame-inset: "9px"
+  card-pad: "1.5rem"
 components:
   button-primary:
-    backgroundColor: "{colors.indigo-depth}"
-    textColor: "{colors.paper-water}"
-    rounded: "{rounded.control}"
-    height: "56px"
-    padding: "0 12px 0 28px"
+    backgroundColor: "{colors.hedge}"
+    textColor: "{colors.spray}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    height: "3.5rem"
+    padding: "0 0.75rem 0 1.75rem"
+  button-primary-hover:
+    backgroundColor: "{colors.hedge-mid}"
   button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.indigo-depth}"
-    rounded: "{rounded.control}"
-    height: "56px"
-    padding: "0 28px"
-  rail-item-active:
-    backgroundColor: "{colors.indigo-depth}"
-    textColor: "{colors.paper-water}"
-    rounded: "{rounded.control}"
-    size: "32px"
-  flashcard:
-    backgroundColor: "{colors.paper-water}"
-    textColor: "{colors.indigo-depth}"
-    rounded: "{rounded.card}"
-    padding: "24px"
-  flashcard-back:
-    backgroundColor: "{colors.indigo-depth}"
-    textColor: "{colors.paper-water}"
-    rounded: "{rounded.card}"
-    padding: "24px"
+    textColor: "{colors.hedge-deep}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    height: "3.5rem"
+    padding: "0 1.75rem"
+  button-secondary-hover:
+    backgroundColor: "{colors.gravel-2}"
+  button-splash:
+    backgroundColor: "{colors.gilt-light}"
+    textColor: "{colors.hedge-deep}"
+    rounded: "{rounded.none}"
+    height: "60px"
+    padding: "0 1.6rem 0 2rem"
+  rail-basin:
+    backgroundColor: "{colors.hedge}"
+    textColor: "{colors.leaf}"
+    rounded: "{rounded.basin}"
+    size: "2rem"
+  rail-basin-awake:
+    backgroundColor: "{colors.hedge-mid}"
+    textColor: "{colors.gilt-light}"
+    rounded: "{rounded.basin}"
+    size: "2rem"
+  rail-basin-active:
+    backgroundColor: "{colors.gilt-light}"
+    textColor: "{colors.hedge-deep}"
+    rounded: "{rounded.basin}"
+    size: "2rem"
+  fountain-card:
+    backgroundColor: "{colors.gravel}"
+    textColor: "{colors.hedge-deep}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.card-pad}"
+    height: "340px"
+  fountain-card-back:
+    backgroundColor: "{colors.hedge}"
+    textColor: "{colors.spray}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.card-pad}"
+    height: "340px"
+  readout-card:
+    backgroundColor: "{colors.spray}"
+    textColor: "{colors.hedge-deep}"
+    rounded: "{rounded.none}"
+    padding: "1.25rem"
+    width: "16rem"
   tooltip:
-    backgroundColor: "{colors.indigo-depth}"
-    textColor: "{colors.paper-water}"
-    rounded: "{rounded.tooltip}"
-    padding: "8px 14px"
+    backgroundColor: "{colors.hedge}"
+    textColor: "{colors.spray}"
+    rounded: "{rounded.none}"
+    padding: "0.5rem 0.875rem"
 ---
 
-# Design System: Yaponiya iqtisodiyoti
+# Design System: Vatikan iqtisodiyoti
 
 ## Overview
 
-**Creative North Star: "The Suminagashi Basin"**
+**Creative North Star: "The Axial Garden Plan"**
 
-The page is one shallow basin of water on which ink is dropped. Each era of Japan's economy is a drop that spreads, thins and is pushed outward by the next, so the newest drop is always the darkest region. The same area-preserving marbling map drives the live WebGL hero, the hairline history rings, and the computed marbled textures on controls, the endpaper band and the future wash. The ink is never a picture of ink.
+The presentation is walked as the Vatican Gardens drawn on an engraved plan: one grand axis runs from the dome to the fountains, and each presenter stop is a parterre that carries one figure. The ground is raked gravel, warm buff stone with fine horizontal rake lines; clipped hedge green owns the navigation rail, the full-bleed emphasis bands and the finale; gilt bronze draws the axes, the hairline frames, the fleurons and the "now" marker. Nothing is lit, glossy or gilded in gradient: gold is a 1px line, never a fill field.
 
-It is a projected talk, not a scrolling brochure. Every presenter stop is a full-viewport slide that holds one idea and is reached with → / PageDown. Paper-white water carries reading. Two indigo "pools" (the robot section and the finale) mark the climax and the close. A single vermilion seal is the only warm color on the page.
+Density is one idea per viewport. A stop is a full-height slide with a section title in engraved, widely spaced Roman capitals, a muted lede, then one composition (a ledger of figures, four fountain cards, a chart drawn as an allée, a scale-zoom map). Copy reads in a sturdy humanist sans with lining figures, sized for a projector at the back of a classroom (19px root, 21px at 1600px and wider).
+
+Motion follows the plan: everything opens along an axis. Words rise out of a clipped line, blocks unfold symmetrically from their centre line, rules draw from the middle outward, chart marks grow from their baseline, and the rail's fountain jets wake one by one as the presenter advances. Content starts faint (15% opacity), never invisible, on desktop.
 
 **Key Characteristics:**
-- Cool paper-white ground, indigo and carbon ink that thins to feathered gray, no cream.
-- Light-weight humanist sans at large sizes, with Japanese words hung as vertical mincho inscriptions beside headings.
-- Structure from hairline rules and 1px gaps, never from drop shadows or boxed cards.
-- Motion is ink: spreading (radial bloom), thinning (opacity plus blur resolving to focus), dissolving (masked erase with blur).
-- Every figure carries its source and year. Approximations wear "~".
+- Raked-gravel ground (`gravel` with 1px rake lines every 7px) as the only texture.
+- Clipped-hedge rail of nine stops, each a circular basin whose jet sleeps, wakes, or plays.
+- Double hairline gilt frames with corner scrolls around every photograph, map and cartouche.
+- Engraved uppercase Castoro Titling for display; Alegreya Sans for everything read.
+- Square corners everywhere; circles only where water stands (basins, flag roundels, loader ring).
+- Axial reveals on a single long ease-out (`cubic-bezier(0.16, 1, 0.3, 1)`).
 
 ## Colors
 
-A restrained ink palette: one hue family (indigo) stepping from water to depth, and one rationed warm seal.
+A warm garden palette: buff gravel and stone, three depths of clipped hedge, gilt bronze for line work, and one rationed porphyry red.
 
 ### Primary
-- **Indigo Depth** (indigo-depth): the darkest ink. Used for headings and body emphasis on paper, the primary control, the active rail item, the focus entity in charts (Japan), and the ground of the robot pool.
-- **Ink Current** (ink-current): a working indigo. Used for chart marks, the progress meter, selection, focus rings and caret.
+- **Clipped Hedge** (`hedge`): the rail, the primary control, `on-hedge` emphasis bands, card backs, the chart tooltip and the finale ground. Its hover partner is **Hedge in Shade** (`hedge-mid`), which also fills "awake" basins and the scrollbar thumb; **Deep Hedge** (`hedge-deep`) is the darkest ink, used for display type and text on gilt.
+
+### Secondary
+- **Gilt Bronze** (`gilt`): 1px rules, fleurons, corner scrolls, the frame border, the active timeline diamond, the focus ring, comparison ratios and the caret. On hedge grounds it lightens to **Pale Gilt** (`gilt-light`), which also fills the active rail basin and the finale's splash button.
 
 ### Tertiary
-- **Shu Seal** (shu-seal): vermilion from the rakkan seal on sumi-e paintings. It appears only in the mark's seal, the "now" marker (the current history row and the present point on the aging chart), the last timeline node, and one comparison reference line (Uzbekistan's growth).
+- **Porphyry** (`porphyry`): Uzbekistan's mark in the comparison only (country name, its column of figures, its outline and Tashkent's dot on the scale-zoom map).
+- **Pool Water** (`water`): a chart series colour only (the operating-result bars and the third revenue bed).
 
 ### Neutral
-- **Paper Water** (paper-water): the page ground and the text on ink.
-- **Wash** (wash): the alternate band ground that separates adjacent paper slides.
-- **Mist** (mist): hairline rules, grid gaps, chart gridlines.
-- **Feathered Gray** (feathered-gray): old ink. Used for inactive ladder rows, secondary strokes, and dark-ground secondary text.
-- **Dilute Ink** (dilute-ink): secondary text on paper (≈4.9:1) and ledes.
-- **Sumi Pool** (sumi-pool): the deepest ground, behind the Spline robot card and the "why" chain.
+- **Raked Gravel** (`gravel`): the page ground, card fronts, ledger cells.
+- **Shaded Gravel** (`gravel-2`): alternate slide bands and the secondary control's hover fill.
+- **Travertine Stone** (`stone`): hairline dividers in ledgers and lists, the gap colour of figure grids, flag rings.
+- **Fountain Spray** (`spray`): text on hedge; the readout cartouche and help dialog surface.
+- **Statuary** (`statuary`): the silver key of the crossed-keys mark on light grounds.
+- **Garden Ink** (`text`): running text on gravel. **Lichen** (`muted`): ledes, notes, labels, secondary data.
+- **Young Leaf** (`leaf`): secondary text, Latin glosses and idle basin icons on hedge.
 
 ### Named Rules
-**The Newest Drop Is Darkest Rule.** Wherever time is shown, the present is the darkest mark and the past thins toward feathered gray. That covers the year's last two digits, the ring bands, the ladder rows and the aging line.
+**The Hedge Owns Rule.** Hedge green is a structural ground (rail, emphasis bands, finale, card backs, primary control), never a text accent on gravel beyond display type and figures.
 
-**The One Seal Rule.** Vermilion marks only the mark and "now". It is never a button, a link color or a series color.
+**The Gilt Line Rule.** Gilt is drawn, not poured: 1px rules, frames, fleurons, markers. Its only solid fills are the active rail basin, the small timeline/ladder diamonds and the finale's splash button.
+
+**The Porphyry Ration Rule.** Porphyry marks Uzbekistan in the comparison and nothing else. It is never an error, alert or emphasis colour.
 
 ## Typography
 
-**Display Font:** Commissioner (with ui-sans-serif, system-ui)
-**Body Font:** Commissioner
-**Inscription Font:** Shippori Mincho B1 (with Hiragino Mincho ProN, Yu Mincho) — its ink-trap corners echo pooled ink.
+**Display Font:** Castoro Titling (with Times New Roman, serif), self-hosted
+**Body Font:** Alegreya Sans (with ui-sans-serif, system-ui), self-hosted, weights 300/400/500/700 and 400 italic
 
-**Character:** A quiet humanist sans set very light and very large, answered by a brushed mincho that hangs vertically like a scroll inscription.
+**Character:** Engraved Roman capitals lettered like a garden-plan cartouche, against a warm humanist sans whose lining figures carry every number. The two never swap roles.
 
 ### Hierarchy
-- **Display** (250, clamp(3.2rem, 6.6vw, 6rem), 0.98): the hero title and chapter openers (e.g. "Robotlar mamlakati").
-- **Headline** (250, clamp(2.6rem, 5.2vw, 5.4rem), 1.02): section headings, split into per-word spans that settle from blur.
-- **Title** (300, 1.45–2rem, 1.2): item headings in ledgers, sector rows, the future list and problem blocks.
-- **Body** (350, 18px root, 1.55): reading copy. Ledes cap at 62ch.
-- **Label** (500, 0.72rem, 0.18em, uppercase): rail items, control labels. Never placed above a heading.
-- **Figures** (200–300, 2–4.4rem): lining numerals for large figures. Tabular numerals only where numbers align (tables, ticks, timeline years).
+- **Display** (400, `clamp(3.4rem, 7.4vw, 6rem)`, 1.02, 0.04em, uppercase): the hero word "Vatikan" and the finale's thank-you. Its companion line runs smaller and far wider (0.24em) in `hedge-mid`.
+- **Headline** (400, `clamp(1.8rem, 4.6vw, 4.6rem)`, 1.04, 0.04em, uppercase): every slide's section title, balanced wrap.
+- **Title** (400, 1.35rem, 0.06–0.08em, uppercase): card, cartouche, timeline and comparison headings.
+- **Figure** (Alegreya Sans 500, `clamp(2.2rem, 3.6vw, 3.4rem)`, line-height 1, lining figures): headline numbers in ledgers and cards, in `hedge`.
+- **Lede** (400, `clamp(1.1rem, 1.4vw, 1.35rem)`, 1.55, max 60ch, `muted`): one paragraph under a section title.
+- **Body** (400, 19px root / 21px at ≥1600px, 1.5): running text, pretty wrap.
+- **Latin gloss** (italic 400, 0.01em): the Latin name under a rail stop, card or subtitle (`Civitas Vaticana`, `Aerarium`).
+- **Label** (500, 0.74rem, 0.2em, uppercase): rail stop names, control text, comparison topics.
+- **Note** (400, 0.82rem, 1.4, `muted`): source lines and figure captions.
 
 ### Named Rules
-**The Inscription, Not Kicker, Rule.** A Japanese word belongs beside its heading in vertical writing (writing-mode: vertical-rl, 0.3em tracking), never as a small line above it.
+**The Engraved Capitals Rule.** Castoro Titling is always uppercase, weight 400, letter-spaced 0.04em or wider. It never sets running text, and figures in ledgers use Alegreya Sans unless the figure is itself a monument (the timeline year, the Davlat ledger values).
+
+**The Every Figure Sourced Rule.** Every data block ends in a note-style source line in `muted`.
 
 ## Layout
 
-A fixed left rail (232px at ≥1024px; a 48px opaque top bar below that) and a content column capped at 1320px with a clamp(1.25rem, 4vw, 4.5rem) gutter. Every presenter stop is a `.slide`: min-height 100svh, content vertically centred, about 80px vertical padding. Pinned stages (the history ladder at 560svh, the whiteout at 260svh) hold a sticky 100svh frame and write their progress to `--p`. Grids use explicit tracks: 2-column text/figure splits, 3-cell and 2-cell ledgers separated by 1px mist gaps, a 6-track future grid (3 + 2), and a 4-up flashcard row. Charts are SVG with viewBox scaling. Text sizes inside the viewBox are chosen to render at or above 14px on a 1440px projector frame.
+The desktop layout is a fixed 220px hedge rail on the left (`--rail`, from 1024px) and a scrolling column of slides. Each slide fills the viewport (`min-height: 100svh`, content centred) with 5rem vertical padding inside a 1340px container with a fluid gutter. Slides alternate gravel and shaded gravel, punctuated by full-bleed hedge bands. Common compositions are two equal columns (title left, lede right, bottom-aligned), a 3-column ledger, and a 4-up card row. Pinned stages (`stage__pin`, sticky full-height) carry scroll-driven pieces: the history timeline, the scale-zoom comparison and the hero whiteout.
+
+Below 1024px the rail collapses into a 3rem hedge bar fixed to the top: crossed keys, the current stop label, Roman numeral progress and a gilt progress hairline along its bottom edge. Grids stack to a single column and reveals start fully hidden so a half-drawn row never peeks in at the bottom edge.
+
+**The One Stop One Viewport Rule.** A presenter stop holds one idea and fills the screen; a new idea is a new stop.
 
 ## Elevation & Depth
 
-Flat by default. Depth comes from ink density and ground changes (paper → wash → indigo pool → sumi), not from shadows. Two soft shadows exist: the help overlay and the chart tooltip each float with one offset shadow (0 18px 40px -18px / 0 10px 24px -12px, rgba of indigo depth).
+The plan is flat. Depth comes from tone (gravel against shaded gravel against hedge), from the double hairline frame, and from the raked texture, not from light. The only shadows in the build sit under transient floating layers that hover over content: the chart tooltip and the keyboard help dialog. Persistent surfaces (cards, cartouches, frames, controls) never cast shadows.
+
+### Shadow Vocabulary
+- **Overlay lift, tooltip** (`box-shadow: 0 10px 24px -12px rgba(19,38,26,0.6)`): chart tooltips only.
+- **Overlay lift, dialog** (`box-shadow: 0 18px 40px -18px rgba(19,38,26,0.45)`): the keyboard help dialog only.
 
 ### Named Rules
-**The Density Is Depth Rule.** To bring something forward, give it darker ink or put it on a pool. Never add a card shadow.
+**The Flat Plan Rule.** Surfaces are flat and framed. A shadow appears only beneath a layer that floats temporarily above the plan, and it is a soft hedge-tinted drop, never a hard offset.
 
 ## Shapes
 
-Pills for controls and rail items (999px). 16px radius for the flashcards and the robot card. Everything else is square-cornered and rule-bound. Circles are data: flag drops (area ∝ GDP), ring bands and timeline nodes.
+Corners are square (0px) everywhere: controls, cards, cartouches, frames, tooltips, the scrollbar thumb. The recurring silhouette is the **double hairline frame**: a 1px gilt border at 70% plus a 1px gilt outline at 45% inset by 7px, finished with four corner scrolls, and with 9px of padding before a photograph or map. On hedge it uses pale gilt at 60%/35%. Circles are reserved for water: rail basins (2rem, ringed with an inner outline), flag roundels with a stone ring, the fountain loader ring. Small 45°-rotated squares (diamonds) mark the current timeline entry and ladder rungs.
+
+**The Square Hedge Rule.** Nothing clipped from hedge or stone is rounded; a circle always means a basin.
 
 ## Components
 
 ### Buttons
-- **Shape:** full pill (999px), 56px tall.
-- **Primary:** indigo depth filled with a computed marbled-ink texture (lib/marble.ts, "ink" preset). Paper label in tracked caps. A 36px ringed arrow disc sits at the right. On hover the marble drifts across (background-position, 1.6s ease-ink).
-- **Secondary:** a feathered-gray 1px outline pill. On hover the border turns indigo depth.
-- **Splash button (finale):** a paper pill on the pool. The label swaps letter by letter and ink splash strokes burst on hover.
+- **Shape:** square (0px), 3.5rem tall.
+- **Primary:** hedge fill, spray label text (0.18em tracking), a 1px hedge outline offset 4px that opens to 7px on hover while the fill shifts to `hedge-mid`; a framed 2.25rem gilt-bordered square holds the arrow icon, which dips 2px on hover. Active scales to 0.98.
+- **Secondary:** transparent with a 1px hedge border at 40%, hedge-deep label; hover firms the border and fills with `gravel-2`.
+- **Splash (finale):** pale gilt fill with a pale gilt outline offset 5px (8px on hover, scale 1.03); letters roll out and back in per character, a gilt stroke traces the perimeter and a spray of short dashes bursts outward.
+- **Focus:** global 2px gilt outline, 3px offset.
+
+### Chips
+- **Table toggle:** a square bordered summary (stone border on gravel, pale gilt at 40% on hedge) that reveals a data table under every chart.
+
+### Cards / Containers
+- **Fountain card:** 340px flip card. Front on gravel inside the double frame with corner scrolls: engraved title, Latin gloss, fleuron rule, figure, meaning. Back on hedge with the light frame: pale gilt title, explanation in spray, Latin gloss in leaf. Flips on hover, click (pinned, `aria-pressed`) and keyboard, 700ms `cubic-bezier(0.77, 0, 0.175, 1)`.
+- **Readout cartouche:** 16rem framed spray panel (95% opacity) over the hero photograph; engraved title, fleuron rule, label/value rows divided by stone hairlines.
+- **Ledger:** figure rows between a gilt top rule and stone hairlines, or a 1px-gap grid whose gap shows stone.
+- **Padding:** 1.5rem in cards, 2–2.5rem in comparison articles.
 
 ### Navigation
-- **Rail:** the seal mark and wordmark on top, ten items (a lucide icon in a 32px disc plus a tracked label), then a section counter (tabular), a 1px progress line and key hints. Active: an indigo-depth disc with a paper icon. Inactive: a dilute icon and label. Hover: indigo depth.
-- **Presenter keys:** → ↓ PageDown Space step forward through `[data-stop]` stops (and through `data-stops` progress points inside pinned stages); ← ↑ PageUp step back; F toggles fullscreen; ? opens the help overlay, which also lists the live effects.
+- **Rail:** hedge column, crossed-keys mark with engraved "Vatikan" and its Latin gloss at the head; a vertical pale gilt axis at 30% runs through nine basins. Each stop pairs a basin (line icon at 15px, stroke 1.6) with a label and its Latin gloss. Idle basins are hedge with leaf icons; passed basins are `hedge-mid` with a sleeping jet at 70%; the current basin fills with pale gilt and its jet plays (`rail-jet`, 1.6s alternate). The foot shows "Bo‘lim" with Roman numeral progress, a gilt progress hairline and the keyboard hint.
+- **Mobile bar:** 3rem hedge bar, label and Roman progress, gilt progress hairline.
+- **Keyboard:** arrows, PageUp/PageDown and Space step between stops (clicker compatible), F toggles fullscreen, ? opens the framed help dialog.
 
-### Flashcards
-A paper card with a mist border (16px). The romaji label sits top-left and the kanji is set vertically in mincho. It flips 180° on hover, click or Enter to an indigo-depth back that carries the meaning.
+### Fleuron Rule (signature)
+A centred gilt fleuron (a bud between two scrolled leaves) between two 1px rules at 70%; the rules draw outward from the fleuron on reveal. It opens the hero, divides cartouches and cards, and leads emphasis bands (pale gilt on hedge).
 
-### Ink Basin (signature)
-A WebGL2 stable-fluid solver on paper. Dye is stored as absorbance and shown with Beer–Lambert, so thinning ink goes gray-blue, not transparent. Drops use the area-preserving marbling map, the pointer drags currents, and a click drops ink. The simulation pauses off-screen.
-
-### Ledgers
-Figure plus label rows on hairline rules. The figure counts up once (NumberFlow, ru-RU grouping: space thousands, comma decimals), and a source note sits under the label.
+### Fountain Square and Scale Zoom (signature)
+Photographs and maps are framed plans with a computed overlay drawn in pale gilt strokes (axis, obelisk ellipse, basins, parterre) that draw stroke by stroke. The comparison zoom descends at one scale from Uzbekistan (porphyry) to Tashkent to the Vatican (gilt marker).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** give every figure a source and a year, and prefix rounded values with "~".
-- **Do** make each presenter stop one full-viewport slide with one idea.
-- **Do** compute ink (marbling map, fluid solver) instead of drawing pictures of ink.
-- **Do** hang Japanese words vertically beside headings.
-- **Do** keep chart text at 14px or more at projector size, and give every chart a "Jadval ko‘rinishi" table view.
+- **Do** lay every reading surface on raked gravel (`gravel` with rake lines `rgba(120,100,60,0.05)` every 7px) or a hedge band, alternating with `gravel-2` for rhythm.
+- **Do** frame photographs, maps and cartouches with the double hairline gilt frame and corner scrolls, padded 9px.
+- **Do** set section titles in uppercase Castoro Titling and pair them with a `muted` lede of at most 60ch.
+- **Do** open content along an axis: words rising from a clipped line, blocks unfolding from their centre, rules drawing outward, on `cubic-bezier(0.16, 1, 0.3, 1)`; and turn every pinned stage into a normal band under reduced motion.
+- **Do** end each data block with a source note and offer a table view for every chart.
 
 ### Don't:
-- **Don't** put a kicker or eyebrow label above a heading.
-- **Don't** use vermilion for anything but the seal and "now".
-- **Don't** use drop shadows on cards or sections. Depth is ink density.
-- **Don't** use gradient text, glass or blur as decoration.
-- **Don't** show on-screen interaction instructions to the audience. They live in the "?" overlay.
+- **Don't** round a control, card or frame; circles are for basins, flag roundels and the loader only.
+- **Don't** use porphyry for anything other than Uzbekistan in the comparison.
+- **Don't** pour gilt into gradients or large fills; it is line work and markers.
+- **Don't** shadow persistent surfaces; only floating tooltip and dialog layers lift.
+- **Don't** set Castoro Titling in lowercase, bold, or for running text.
+- **Don't** let a reveal start invisible on desktop; content begins at 15% opacity.

@@ -9,31 +9,30 @@ related_targets: []
 
 Scope: the whole single-page presentation. Visitor mode: Experience (a live, speaker-led talk; the audience is inside the work, the presenter drives it).
 
-Audience/job: classmates + teacher reading a projected screen; presenter advances with keys/scroll. Proof: public, dated statistics (IMF, IFR, Statistics Bureau, Cabinet Office, JNTO, MoF). Memorable moment: the robot section, a dark "newest drop" pool.
+Audience/job: classmates + teacher reading a projected screen in an Uzbek economics class; presenter advances with keys/clicker. Subject: the economy of Vatican City / the Holy See, neutral economic analysis (no preaching). Proof: dated public figures (Secretariat for the Economy, APSA, IOR, Peter's Pence reports, Vatican Museums, Uzbekistan Statistics Committee, Ministry of Economy and Finance). Memorable moment: the Uzbekistan ↔ Vatican comparison, kept in ONE dedicated section (user choice), driven by a scroll-scrubbed same-scale zoom from Uzbekistan's outline down to the Vatican's.
 
-Prompt → section translation (user-supplied components, carried into the ink world):
-- Hero animate (tubes cursor) → translated into a WebGL ink-basin fluid: the pointer still drags a 3D-feeling current, click still changes pigment.
-- parallax.md (GSAP + Lenis) → Mt. Fuji ink-wash layers; Lenis drives the whole page.
-- scroll-web.md → pinned numeric ladder (history), masked whiteout (lost decades dissolving), per-word rise.
-- flip-card.md → kanji flashcards for the Japanese management model.
-- kinetic.md (neon mesh) → indigo thread mesh for Monozukuri.
-- robot.md (Spline + Spotlight + Card) → robot section, verbatim component.
-- sonar-grid-effect.md → water-ripple dot field behind robot figures.
-- motion.md (flow field) → ink currents behind the problems section.
-- prompt-background-light.md (aurora) → indigo marbled washes for the future section.
-- shader.md (MeshGradient + PulsingBorder) → ink mesh finale + rotating seal ring.
-- 2-prompt.md (text roll) + button.md (splash button) → finale thank-you and back-to-top.
+User answers: climax = UZ↔VA comparison; comparison only in its own section; real open-licence photos (Wikimedia Commons, stored locally); neutral economic tone. The Japan robot/Spline section is dropped (Japan-specific).
+
+Prompt → section translation:
+- parallax.md (GSAP + Lenis) → dome-over-the-gardens photo plate.
+- scroll-web.md → pinned year ladder (history), whiteout (deficit), per-word rise.
+- flip-card.md → four money institutions (Museums, Peter's Pence, IOR, APSA) as fountain-card flips.
+- prompt.md (3D coverflow) → Vatican Museums gallery of artworks.
+- motion.md (flow field) → fountain water currents behind the problems opener.
+- prompt-background-light.md (aurora) → drifting computed parterre embroidery behind the future section.
+- shader.md (MeshGradient) → hedge-green finale field; 2-prompt.md (text roll) + button.md (splash button) → thank-you + back to top.
+- Hero animate.md → translated into the computed axial garden plan whose fountains wake under the pointer.
 
 ## Direction contract
 
-THESIS: Japan's economy as one basin of suminagashi ink: each era is a drop that spreads, thins and is overtaken by the next; the presenter stirs the water. Refuses the category default (black ground, red sun disc, sakura, neon Tokyo).
+THESIS: The Vatican's economy walked as an axial garden plan: half the 0,49 km² state is garden, and the talk moves down one grand axis from the dome to the fountains, each stop a parterre that carries one figure. Refuses the category default (black marble, gold gradient, candlelit dome, Cinzel).
 
-OWN-WORLD: paper-white water #F6F7F9, mist #DDE2E8, feathered gray #AEB6C2, dilute ink #606D80, ink current #1E2D4A, indigo depth #0A1A33; one vermilion rakkan seal #C23B22, rationed to the mark and the "now" marker. Commissioner (light/regular) humanist sans, tracked small caps for labels, Shippori Mincho B1 for kanji. Hairline rules, no drop shadows, marbled-ink fill on the primary control, left rail nav with drop/ring icons, right readout rail.
+OWN-WORLD: clipped-hedge green #1F3B2A owning the rail, pools and finale; raked-gravel buff ground #E8DDC6 (warm stone, never cream-white); gilt bronze #B08A3E for rules, fleurons, the "now" marker and the active fountain; fountain-spray #F6F5EF; statuary gray #8C8F8A; one porphyry red #8E2F25 rationed to Uzbekistan's mark in the comparison. Engraved spaced Roman capitals for display, a sturdy humanist sans for reading and figures. Double hairline frames with corner fleurons, no shadows, no gradient decoration. Left rail = green garden plan of nine stops with engraved icons.
 
-STORY: the audience sees rise (1945–1989), stall (1991–2012), and re-invention through robots against an aging society; they leave believing robots are an economic necessity for Japan, not a gadget. The presenter advances with arrow keys / clicker.
+STORY: the audience learns how a state with no taxes, no currency of its own and ~880 residents funds a global institution (donations, museums, IOR, APSA), sees its deficits and scandals, then measures it against Uzbekistan at one scale; they leave understanding that the Vatican economy is an institution's balance sheet, not a national economy.
 
-FIRST VIEWPORT: full-bleed live ink basin; still left margin with 日本経済 (mincho, indigo) over "Yaponiya iqtisodiyoti" at ~6rem light weight, one-line lede, primary marbled control "Taqdimotni boshlash" + secondary "Manbalar" (changed from "Bo'limlar": the rail already lists sections, and an economics teacher asks for sources first); left rail = seal mark + section list; right rail = live readouts (YaIM, aholi, 65+ ulushi).
+FIRST VIEWPORT: green rail left; gravel panel with a fleuron rule, "VATIKAN" in engraved capitals at ~7rem over "iqtisodiyoti", one-line lede, primary green-framed control "Taqdimotni boshlash" + secondary "Manbalar"; right half a framed aerial photograph down the Via della Conciliazione axis with a computed parterre/fountain overlay and a "water theatre" readout card (0,49 km², ~882 aholi, Yevro).
 
-FORM: Suminagashi ink basin, the user-adopted catalog challenger medium-native-fluid-ink-basin (not on my grounded list; my list's #6 industrial robot cell was the roll). Seed key 3755a715. Signature interaction: pointer drags ink currents, click drops a new pigment. Motion grammar: ink spreads (feathered radial bloom), thins (opacity + blur), dissolves (mask erase). Raises kept: every figure carries a source+year note; the present is always the darkest drop.
+FORM: Vatican Gardens as an axial plan, the dealt catalog challenger architecture-inhabitable-space-versailles-bosquet-vistas chosen by the user over my assigned #5 (Gallery of Maps). Seed key 363bac7b. Signature interaction: fountains along the axis wake in sequence as the presenter advances (rail + hero plan), and the comparison zoom descends from Uzbekistan to the Vatican at one scale. Motion grammar: reveal along axes (lines drawn from the centre outward, symmetric), fountain jets rising, parterre embroidery drawn stroke by stroke.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

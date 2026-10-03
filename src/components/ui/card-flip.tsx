@@ -1,25 +1,27 @@
 "use client"
 
 /**
- * Card Flip (flip-card.md, kokonutui — MIT) turned into a kanji flashcard:
- * the front carries the Japanese term, the back its meaning in Uzbek.
- * Flips on hover, on click (for a presenter without a mouse hover) and on
- * keyboard focus + Enter.
+ * Card Flip (flip-card.md, kokonutui — MIT) turned into a fountain card:
+ * the front carries the institution and its headline figure on gravel,
+ * the back its explanation on clipped hedge. Flips on hover, on click (for a
+ * presenter without hover) and on keyboard focus + Enter.
  */
 
 import { Repeat2 } from "lucide-react"
 import { useState } from "react"
+import { Corners, FleuronRule } from "@/components/Ornament"
 import { cn } from "@/lib/utils"
 
 export interface CardFlipProps {
-  kanji: string
-  romaji: string
+  name: string
+  latin: string
+  figure: string
   meaning: string
   text: string
   className?: string
 }
 
-export default function CardFlip({ kanji, romaji, meaning, text, className }: CardFlipProps) {
+export default function CardFlip({ name, latin, figure, meaning, text, className }: CardFlipProps) {
   const [hover, setHover] = useState(false)
   const [pinned, setPinned] = useState(false)
   const flipped = hover || pinned
@@ -28,8 +30,8 @@ export default function CardFlip({ kanji, romaji, meaning, text, className }: Ca
     <button
       type="button"
       aria-pressed={pinned}
-      aria-label={`${romaji}: ${meaning}. ${text}`}
-      className={cn("group relative h-[300px] w-full cursor-pointer text-left [perspective:2000px]", className)}
+      aria-label={`${name}: ${figure}, ${meaning}. ${text}`}
+      className={cn("group relative h-[340px] w-full cursor-pointer text-left [perspective:2000px]", className)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => setPinned((v) => !v)}
@@ -41,24 +43,27 @@ export default function CardFlip({ kanji, romaji, meaning, text, className }: Ca
           flipped ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]",
         )}
       >
-        {/* Front — the term, set like a hanging scroll */}
-        <div className="absolute inset-0 flex flex-col justify-between rounded-2xl border border-mist bg-paper p-6 [backface-visibility:hidden]">
-          <div className="flex items-start justify-between">
-            <span className="label text-dilute">{romaji}</span>
-            <Repeat2 aria-hidden="true" className="size-4 text-feather transition-transform duration-500 group-hover:-rotate-12" />
+        {/* Front — the institution, engraved like a plan cartouche */}
+        <div className="frame absolute inset-0 flex flex-col bg-gravel p-6 [backface-visibility:hidden]">
+          <Corners />
+          <div className="flex items-start justify-between gap-3">
+            <h3 className="engr text-[1.35rem] tracking-[0.06em] text-hedge-deep">{name}</h3>
+            <Repeat2 aria-hidden="true" className="mt-1 size-4 shrink-0 text-gilt transition-transform duration-500 group-hover:-rotate-12" />
           </div>
-          <span className="jp self-center text-[4.2rem] leading-none text-depth [writing-mode:vertical-rl]">
-            {kanji}
-          </span>
-          <span className="text-lg font-normal text-ink">{meaning}</span>
+          <span className="latin mt-1 text-[0.92rem] leading-snug text-muted">{latin}</span>
+          <div className="mt-auto">
+            <FleuronRule className="mb-4" />
+            <p className="text-[clamp(2rem,2.6vw,2.6rem)] leading-none font-medium text-hedge">{figure}</p>
+            <p className="mt-2 text-text">{meaning}</p>
+          </div>
         </div>
 
-        {/* Back — the meaning, on ink */}
-        <div className="absolute inset-0 flex flex-col rounded-2xl bg-depth p-6 text-paper [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <span className="jp text-3xl text-feather">{kanji}</span>
-          <span className="mt-3 text-xl font-normal">{meaning}</span>
-          <p className="mt-4 text-[0.95rem] leading-relaxed text-mist">{text}</p>
-          <span className="label mt-auto text-feather">{romaji}</span>
+        {/* Back — the explanation, on hedge */}
+        <div className="frame frame--light absolute inset-0 flex flex-col bg-hedge p-6 text-spray [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <span className="engr text-[1.1rem] tracking-[0.06em] text-gilt-light">{name}</span>
+          <span className="mt-2 text-xl font-medium">{figure}</span>
+          <p className="mt-4 text-[1rem] leading-relaxed text-spray/90">{text}</p>
+          <span className="latin mt-auto text-leaf">{latin}</span>
         </div>
       </div>
     </button>

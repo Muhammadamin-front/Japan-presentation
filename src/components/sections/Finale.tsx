@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react"
 import { MeshGradient, PulsingBorder } from "@paper-design/shaders-react"
-import { Seal } from "@/components/Seal"
+import { FleuronRule, Keys } from "@/components/Ornament"
 import { SplashButton } from "@/components/ui/splash-button"
 import { TextRoll } from "@/components/ui/text-roll"
 import { WordRise } from "@/components/ui/word-rise"
-import { CONCLUSIONS, PRESENTER, SOURCES } from "@/lib/data"
+import { CONCLUSIONS, PHOTO_CREDITS, PRESENTER, SOURCES } from "@/lib/data"
 import { scrollToY } from "@/lib/scroll"
-import { delay } from "@/lib/utils"
+import { delay, roman } from "@/lib/utils"
 
 /** Replays the letter roll every time the thank-you comes into view. */
 function useEntryCount<T extends HTMLElement>() {
@@ -22,33 +22,33 @@ function useEntryCount<T extends HTMLElement>() {
   return { ref, count }
 }
 
-/** shader.md's PulsingBorder + rotating text ring, re-cut as a seal in ink tones. */
-function SealRing() {
+/** shader.md's PulsingBorder + rotating text ring, re-cut as a gilt basin around the keys. */
+function KeysRing() {
   return (
-    <div className="relative grid size-40 place-items-center">
+    <div className="relative grid size-44 place-items-center">
       <PulsingBorder
-        colors={["#aeb6c2", "#dde2e8", "#606d80", "#f6f7f9"]}
+        colors={["#d2b46c", "#a9853a", "#f6f5ef", "#9fb28f"]}
         colorBack="#00000000"
-        speed={1.2}
+        speed={1}
         roundness={1}
-        thickness={0.08}
+        thickness={0.06}
         softness={0.3}
-        intensity={0.5}
+        intensity={0.45}
         spots={4}
         spotSize={0.12}
-        pulse={0.12}
-        smoke={0.4}
+        pulse={0.1}
+        smoke={0.35}
         smokeSize={3}
-        style={{ width: 96, height: 96, borderRadius: "50%" }}
+        style={{ width: 104, height: 104, borderRadius: "50%" }}
         className="absolute"
       />
-      <Seal className="relative size-12" />
-      <svg viewBox="0 0 100 100" aria-hidden="true" className="absolute inset-0 size-full animate-[spin_28s_linear_infinite] motion-reduce:animate-none">
+      <Keys className="relative size-14" light />
+      <svg viewBox="0 0 100 100" aria-hidden="true" className="absolute inset-0 size-full animate-[spin_32s_linear_infinite] motion-reduce:animate-none">
         <defs>
-          <path id="seal-ring" d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+          <path id="keys-ring" d="M 50,50 m -41,0 a 41,41 0 1,1 82,0 a 41,41 0 1,1 -82,0" />
         </defs>
-        <text className="fill-feather text-[7.4px] tracking-[0.28em] uppercase">
-          <textPath href="#seal-ring">Yaponiya iqtisodiyoti · 日本経済 · 2026 · Rahmat ·</textPath>
+        <text className="fill-gilt-light text-[7px] tracking-[0.3em] uppercase" style={{ fontFamily: "var(--font-engr)" }}>
+          <textPath href="#keys-ring">Civitas Vaticana · {roman(2026)} · Gratias ·</textPath>
         </text>
       </svg>
     </div>
@@ -60,58 +60,65 @@ export function Finale() {
 
   return (
     <>
-      <section id="xulosa" aria-label="Xulosa" className="relative isolate overflow-hidden bg-depth text-paper">
-        <MeshGradient
-          className="absolute inset-0 -z-10 h-full w-full"
-          colors={["#0a1a33", "#1e2d4a", "#060a12", "#3a4a66"]}
-          distortion={0.85}
-          swirl={0.25}
-          speed={0.22}
-        />
+      <section id="xulosa" aria-label="Xulosa" className="relative isolate overflow-hidden bg-hedge text-spray">
+        <MeshGradient className="absolute inset-0 -z-10 h-full w-full" colors={["#13261a", "#1f3b2a", "#2c5039", "#3a5a3c"]} distortion={0.8} swirl={0.2} speed={0.2} />
 
         <div data-stop className="slide wrap-page py-20">
-          <WordRise as="h2" className="section-title text-paper" text="Xulosa" />
-          <ul className="mt-14 grid gap-10 md:grid-cols-3">
+          <WordRise as="h2" className="section-title text-spray" text="Xulosa" />
+          <FleuronRule className="mt-8 max-w-md" tone="text-gilt-light" />
+          <ol className="mt-14 grid gap-10 md:grid-cols-3">
             {CONCLUSIONS.map((c, i) => (
-              <li key={i} className="border-t border-white/20 pt-6 text-[clamp(1.1rem,1.5vw,1.35rem)] leading-relaxed font-light text-mist" data-rev style={delay(120 * i)}>
-                {c}
+              <li key={i} className="border-t border-gilt-light/40 pt-6" data-rev style={delay(140 * i)}>
+                <span className="engr text-[1.6rem] text-gilt-light">{roman(i + 1)}</span>
+                <p className="mt-3 text-[clamp(1.1rem,1.5vw,1.35rem)] leading-relaxed text-spray">{c}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
 
-        <div ref={thanks.ref} data-stop className="flex min-h-svh flex-col items-center justify-center px-6 pb-24 text-center">
-          <SealRing />
-          <h2 className="mt-10 text-[clamp(4.5rem,12vw,10.5rem)] leading-none font-extralight tracking-[-0.04em] text-paper">
+        <div ref={thanks.ref} data-stop className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pb-24 text-center">
+          <img src="/images/twilight.jpg" alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 -z-10 h-full w-full object-cover opacity-30 mix-blend-luminosity" />
+          <KeysRing />
+          <h2 className="engr mt-10 text-[clamp(4rem,10vw,6rem)] leading-none tracking-[0.06em] text-spray">
             {thanks.count > 0 ? <TextRoll key={thanks.count}>Rahmat!</TextRoll> : "Rahmat!"}
           </h2>
-          <p className="jp mt-5 text-[clamp(1.1rem,1.6vw,1.5rem)] tracking-[0.15em] text-feather">ご清聴ありがとうございました</p>
-          <p className="lede mt-4 !text-mist">E’tiboringiz uchun rahmat. Savollaringiz bo‘lsa — marhamat.</p>
+          <p className="latin mt-5 text-[clamp(1.2rem,1.7vw,1.6rem)] text-gilt-light">Gratias vobis ago</p>
+          <p className="lede mt-4 !text-spray/85">E’tiboringiz uchun rahmat. Savollaringiz bo‘lsa — marhamat.</p>
           {PRESENTER.name && (
-            <p className="mt-2 text-mist">
+            <p className="mt-2 text-spray">
               {PRESENTER.name}
-              {PRESENTER.group && <span className="text-feather"> · {PRESENTER.group}</span>}
+              {PRESENTER.group && <span className="text-leaf"> · {PRESENTER.group}</span>}
             </p>
           )}
-          <SplashButton className="splash-btn--light mt-12" label="Boshiga qaytish" hoverLabel="Yana bir bor" onClick={() => scrollToY(0)} />
+          <SplashButton className="mt-12" label="Boshiga qaytish" hoverLabel="Yana bir bor" onClick={() => scrollToY(0)} />
         </div>
       </section>
 
-      <section id="manbalar" data-stop aria-label="Manbalar" className="slide bg-paper py-20">
+      <section id="manbalar" data-stop aria-label="Manbalar" className="slide raked py-20">
         <div className="wrap-page grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
           <div>
-            <h2 className="text-[1.8rem] font-light text-depth">Manbalar</h2>
+            <h2 className="engr text-[1.9rem] tracking-[0.08em] text-hedge-deep">Manbalar</h2>
             <p className="note mt-3 max-w-[32ch]">Barcha raqamlar ochiq manbalardan olingan. «~» — yaxlitlangan yoki taxminiy qiymat.</p>
           </div>
-          <ul className="grid gap-x-10 sm:grid-cols-2">
-            {SOURCES.map((s) => (
-              <li key={s} className="border-b border-mist py-3 text-[0.95rem] text-depth">
-                {s}
-              </li>
-            ))}
-          </ul>
+          <div>
+            <ul className="grid gap-x-10 sm:grid-cols-2">
+              {SOURCES.map((s) => (
+                <li key={s} className="border-b border-stone py-3 text-[0.95rem] text-text">
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <h3 className="label mt-10 text-muted">Suratlar — Wikimedia Commons</h3>
+            <ul className="mt-2 grid gap-x-10 sm:grid-cols-2">
+              {PHOTO_CREDITS.map((s) => (
+                <li key={s} className="border-b border-stone/60 py-2 text-[0.85rem] text-muted">
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <p className="wrap-page note mt-14">Sayt React, Spline 3D, GSAP, Lenis va WebGL siyoh simulyatsiyasi bilan qurilgan · 2026</p>
+        <p className="wrap-page note mt-14">Sayt React, GSAP, Lenis, WebGL shader va canvas favvoralari bilan qurilgan · 2026</p>
       </section>
     </>
   )
